@@ -7,7 +7,7 @@
 3. 轻巧极速加载
 
 # 案例
-[TonyChenn.cn](Tonychenn.cn)
+[TonyChenn.cn](https://Tonychenn.cn)
 
 # 下载
 Github: https://github.com/TonyChenn/hexo-theme-mdm
