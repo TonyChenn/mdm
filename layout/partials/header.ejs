@@ -1,0 +1,23 @@
+<header>
+    <div class="mdui-card-media" style="overflow: hidden;">
+        <% if(is_post()){ %>
+        <img src="<%= page.img %>" class="header-box blur mdui-img-fluid" onerror="{this.src='<%=theme.default_error_img%>'}" draggable="false">
+        <%} else if(is_tag() || is_month()){%>
+        <img class="half-header-box mdui-img-fluid" draggable="false">
+        <% }else{ %>
+        <img src="<%=theme.index_header_img%>" class="header-box mdui-img-fluid" draggable="false">
+        <% } %>
+            <div class="header-content">
+                <% if(is_post() || is_month()){ %>
+                <span class="header_title"><%=page.title%></span></br>
+                <% }else if(is_tag()){ %>
+                <span class="header_title"><%=page.tag%></span></br>
+                <!--TODO-->
+                <%  }else{ %>
+                <span class="header_title"><%=config.title%></span></br>
+                <% } %>
+                <p id="hitokoto">一言加载中...</p>
+            </div>
+        </img>
+    </div>
+</header>

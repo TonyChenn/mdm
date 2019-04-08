@@ -1,0 +1,47 @@
+<!--Index-->
+<div class="mdui-center" style="width:95%;max-width:550pt;">
+      <h3>Recent Posts</h3>
+</div>
+<% if (page.posts.length > 0) { %>
+  <div id="recent-posts" class="mdui-center">
+    <% page.posts.sort('date', -1).limit(10).each(post => { %>
+      <div class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
+        <!--图片或视频部分-->
+        <div class="mdui-card-media">
+          <% if(post.video){ %>
+            <video class="mdui-video-fluid" style="max-height: 450px;" controls>
+              <source src="<%- post.video %>" type="video/mp4" >
+            </video>
+          <% }else{ %>
+            <img class="img_item mdui-color-theme mdui-text-color-theme mdui-img-fluid" src="<%- post.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
+            <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+              <div class="mdui-card-primary">
+                  <div class="title_font float_left mdui-card-primary-title"><%- post.title %></div>
+              </div>
+            </div>
+            <% } %>
+        </div>
+        <!--描述-->
+        <div class="mdui-card-actions">
+          <% if(post.video){ %>
+            <p class="mdui-text-color-black-icon" style="text-align:center; font-weight:100;"><%- post.content %></p>
+          <% }else{ %>
+
+          <% if(post.description){ %>
+            <p class="mdui-text-color-black-icon" style="text-align:left;"><%- post.description %></p>
+          <%}%>
+          <%}%>
+          <div class="mdui-divider"></div>
+            <span class="info mdui-text-color-black-disabled">
+              <i class="mdui-icon material-icons">access_time</i>
+              <%- post.date.format("YYYY-MM-DD") %>
+            </span>
+            <% if(!post.video){%>
+              <a class="info mdui-text-color-pink " href="<%- url_for(post.path) %>" style="float:right;">去围观</a>
+            <% } %>
+        </div>
+      </div>
+      </br></br>
+    <% }); %>
+  </div>
+<% } %>

@@ -1,0 +1,13 @@
+.main{
+	position: absolute;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+}
+
+@media (max-width: 1000px) {
+	.content{
+		width: 100%;
+		max-width: 680px;
+	}
+}

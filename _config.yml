@@ -1,0 +1,49 @@
+# HeaderBar 菜单
+menu:
+  Home: /
+  Tags: /tags
+  Archives: /archives
+  Video: /video
+  About: /about
+
+# 图标
+# 图标只在小屏时候显示
+# 查找图标访问：（https://www.mdui.org/docs/material_icon）
+Icon:
+  Home: home
+  Tags: local_offer
+  Archives: library_books
+  Video: videocam
+  About: error_outline
+
+# 评论(Valine)
+#  show_talk: 是否开启评论
+#  app_id: 你的 app_id
+#  app_key: 你的 app_key
+#  avatar: 头像         '',  'mp',  'identicon',  'monsterid',  'wavatar', 'retro', 'robohash', 'hide'
+#  评论提醒,验证码: 默认关闭，在post.ejs文件内
+#  更多配置查看官网(https://valine.js.org/)  
+Valine:
+  show_talk: true
+  app_id: Jng2NUkg6zUYlLxMxl4S91kW-gzGzoHsz
+  app_key: NKjBMKVPJv3CggFYFSUkUAvR
+  avatar: retro
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+
+#  是否开启文章目录
+toc: false
+
+# 打赏
+reward:
+  enable: false
+  alipay-img: 
+  wechat-img:
+
+
+
+# 首页顶部图片地址
+index_header_img: https://ws1.sinaimg.cn/large/006PThdlgy1g1nfcrzwx2j318g0p0wl6.jpg
+# 文章内顶部图片没有设置或者图片出错后显示的默认图片
+default_error_img: https://ws1.sinaimg.cn/large/006PThdlgy1g1nfcrzwx2j318g0p0wl6.jpg
+# 博文条目没有指定图片,默认图片
+no_img: https://ws1.sinaimg.cn/thumbnail/006PThdlly1g1ng95b96oj30dw08odfn.jpg

@@ -1,0 +1,206 @@
+a{
+  color: #F44336;
+}
+h1, h2,h3{
+  color: #3F51B5;
+}
+body {
+  background: #f5f5f5;
+}
+
+
+#recent-posts{
+  padding-top:5px;width:95%;max-width:550pt;text-align:center;
+}
+
+#bottom-inner{
+  text-align: center;
+}
+#bar{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+/*一言*/
+#hitokoto{
+  font-size: 1em;
+  color: #ddd;
+}
+/*页码*/
+#paginator{
+  font-size: 1.6em;
+  text-align: center;
+}
+#paginator a{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#paginator .space{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#paginator .current{
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.info{
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 1em;
+}
+.goTop{
+  display: none;
+}
+.header-box{
+width: 100%; max-height: 600px; background: #3F51B5; position: relative;
+}
+.half-header-box{
+  width: 100%; height: 400px; background: #3F51B5; position: relative;
+}
+.header-content{
+  position:absolute; top:50%; width: 100%; text-align: center;
+}
+.header_title{
+  text-align: center;
+  font-size: 1.8em;
+  color: #f5f5f5;
+}
+/*高斯模糊*/
+.blur {
+  -webkit-filter: blur(10px);
+     -moz-filter: blur(10px);
+      -ms-filter: blur(10px);    
+          filter: blur(10px);   
+}
+.post-content{
+  width: 98%;
+  max-width: 900px;
+}
+/*修复连接超出边界*/
+.post-content a{
+  word-wrap: break-word;
+}
+.fixed-bottom {
+  position: fixed;bottom: 0;width:100%;
+}
+._tag{
+  color: aquamarine;
+  font-size: 2.45em;
+}
+/*博客条目图片*/
+.img_item{
+  width:100%;
+  height: 56%;
+  max-width: 800px;
+  max-height: 450px;
+}
+
+
+
+.title_font{
+  font-size: 1.3em;
+  color: #f5f5f5;
+}
+.float_left{
+  float: left;
+}
+.content_font{
+  font-size: 1em;
+  color: #37474f;
+}
+
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 5px; 
+    height: 10px;
+}  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    /*滚动条的背景区域的内阴影*/
+    box-shadow:0px 1px 3px rgba(0,0,0,0.3) inset;
+    border-radius: 10px;
+    background-color: #ddd;
+}  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    /*滚动条的内阴影*/
+    box-shadow:0px 1px 3px rgba(0,0,0,0.3) inset;
+    border-radius: 10px;  
+    background-color: #aaa;  
+}
+
+/*Archive*/
+.mdui-panel .mdui-panel-item .mdui-panel-item-header{
+  font-size: 1.2em;
+}
+.mdui-panel-item-body div{
+  font-size: 1em;
+}
+
+/* md文本的样式
+*/
+
+/*表格*/
+
+table thead,
+table tbody{
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+table thead{
+  background:#CFD8DC;
+}
+table tbody{
+  background: rgba(207, 216, 220, 0.26);
+}
+
+/*代码背景*/
+figure{
+  background:#CFD8DC;
+  width: 100%;
+  margin: 0%;
+  overflow-x: auto;
+  border-radius: 10px 10px 10px 10px;
+}
+figure table tbody{
+  table-layout: inherit;
+}
+
+
+
+
+/*图片*/
+img{
+  width: 100%;
+}
+/*重写覆盖MDUI中的字体大小*/
+h1{
+  font-size: 1.5em;
+}
+h2{
+  font-size: 1.3em;
+}
+h3{
+  font-size: 1.1em;
+}
+h4, h5, h6{
+  font-size: 1em;
+}
+/*字体*/
+.post-content p,
+.post-content li,
+.post-content tr{
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  font-weight: 300;
+}

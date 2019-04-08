@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="<%=config.language%>">
+<!--Head-->
+<%- partial('partials/head',{cache: true})%>
+
+<!--header_bar-->
+<%- partial('partials/headerbar', {cache: true})%>
+
+<!--Header-->
+<%- partial('partials/header',{cache: true})%>
+<body>
+  <div class="post-content mdui-center" id="content-inner">
+    <%- body %>
+  </div>
+</body>
+<!--goTop-->
+<%- partial('partials/gotop', {cache: true}) %>
+<!--footer-->
+<%- partial('partials/footer', {cache: true}) %>
+</html>

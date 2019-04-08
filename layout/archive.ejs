@@ -1,0 +1,36 @@
+<!-- 归档列表 -->
+<% 
+    var years = {};
+    site.posts.sort('date').reverse().forEach(function(post){
+        var year = post.date.year()
+        if(years[year]===undefined){
+            years[year] = [];
+        }
+        years[year].push(post);
+    });
+%>
+ <!--归档列表 -->
+<div class="mdui-center post-content">
+  <h1><%=page.title%></h1>
+  <div class="mdui-panel" mdui-panel="{accordion : true}">
+    <% Object.keys(years).reverse().forEach(function(year){  %>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">
+              <div class="mdui-panel-item-title" id="<%= year %>"><%= year %></div>
+              <div class="mdui-panel-item-summary">共<%= years[year].length %>篇</div>
+              <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-panel-item-body mdui-typo">
+                <% years[year].map(function(post){  %>
+                  <span class="mdui-panel-item-summary">
+                    <%= post.date.format('MM-DD') %>
+                    <a class="mdui-panel-item-summary" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
+                  </span>
+                <hr>
+                <% }) %>
+            </div>
+          </div>
+    <% }) %>
+  </div>
+</div>
+</br></br></br>

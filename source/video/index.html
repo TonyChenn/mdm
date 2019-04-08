@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--响应式兼容-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>VIP视频解析</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/mdui/0.4.0/css/mdui.min.css" />
+</head>
+
+<body class="mdui-color-grey-200 ">
+	<header class="mdui-appbar mdui-color-indigo">
+		<nav class="mdui-toolbar mdui-color-theme">
+			<button class="mdui-btn mdui-btn-icon mdui-ripple" drawer-controller><i class="mdui-icon material-icons">menu</i></button>
+			<div class="mdui-typo-title">首页</div>
+		</nav>
+	</header>
+  	<div class="main mdui-container">
+  		
+  		</br><!--
+  		<div class="mdui-video-container">
+			
+            	作者：offline
+            	时间：2018-10-08
+            	描述：
+            <iframe height=498 width=510 id="video" src="https://cdn.yangju.vip/k/?url=https://www.iqiyi.com/v_19rr7p4vfo.html" frameborder=0 allowfullscreen></iframe>
+		</div>
+  	-->
+  		<span class="mdui-subheader ">VIP视频在线解析工具</span>
+  		
+  		<div class="mdui-row mdui-row-gapless mdui-shadow-10">
+
+			<select size="4" class="mdui-select" mdui-select="{position: 'bottom'}" id="lineSelect" onchange="getContent(this.value,this.options[this.selectedIndex].text)">
+			  <option value="http://v.d9y.net/vip/?url=" selected>线路一(无广告)</option>
+			  <option value="https://jx.wslmf.com/?url=">线路二(无广告)</option>
+			  <option value="https://660e.com/?url=">线路三(无广告)</option>
+			  <option value="https://jx.lache.me/cc/?url=">线路四(无广告)</option>
+			  <option value="https://jx.618g.com/?url=">线路五(无广告)</option>
+			  <option value="https://jx.000180.top/jx/?url=">线路六</option>
+			  <option value="https://jx.km58.top/jx/?url=">线路七</option>
+			</select>
+				
+				
+			<div class="mdui-textfield mdui-textfield-floating-label">
+				<label class="mdui-textfield-label">请输入视频地址：</label>
+				<input class="mdui-textfield-input" type="url" id="movieUrl"/>
+			</div>
+		
+			<div>
+				<button class="mdui-btn mdui-ripple mdui-color-pink mdui-float-right" onclick="ParseUrlClick()">开始解析</button>
+			</div>
+			</br></br></br>
+  		</div>
+</br>
+
+		<span class="mdui-subheader ">视频导航</span>
+  		<div class="mdui-card mdui-hoverable">
+  			</br>
+  			<div class="mdui-row">
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="https://www.iqiyi.com/">爱奇艺</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="https://v.qq.com/">腾讯视频</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="https://www.youku.com/">优酷</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="http://www.tudou.com/">土豆</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="http://www.le.com/">乐视</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="https://www.bilibili.com/">哔哩哔哩</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="http://www.pptv.com/">PPTV</a></div>
+  				<div class="mdui-col-xs-6 mdui-col-sm-4"><a href="http://www.baidu.com/">...</a></div>
+  			</div>
+  			</br>
+  		</div>
+  	</div>
+  
+  
+	<div class="mdui-fab-wrapper" mdui-fab="">
+	    <button class="mdui-fab mdui-ripple mdui-color-pink">
+	        <i class="mdui-icon material-icons">add</i>
+	        <i class="mdui-icon mdui-fab-opened material-icons">mode_edit</i>
+	    </button>
+	    <div class="mdui-fab-dial" style="height: 0px;">
+	        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" style="transition-delay: 0ms;"><i class="mdui-icon material-icons">backup</i></button>
+	        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" style="transition-delay: 15ms;"><i class="mdui-icon material-icons">bookmark</i></button>
+	        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange" style="transition-delay: 30ms;"><i class="mdui-icon material-icons">access_alarms</i></button>
+	        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" style="transition-delay: 45ms;"><i class="mdui-icon material-icons">touch_app</i></button>
+	    </div>
+	</div>
+	
+	
+</br></br>
+<div align="right">无法播放请切换线路！</div>
+<div align="right">更新时间：2019.3.15</div>
+</body>
+<script src="https://cdn.bootcss.com/mdui/0.4.0/js/mdui.min.js"></script>
+<script src="js/main.js"></script>
+</html>

@@ -1,0 +1,39 @@
+<!-- 标签云 -->
+<div class="post-content mdui-center mdui-shadow-2">
+    <!--标签云-->
+    <h3>共计&nbsp;<%= site.tags.length %>&nbsp;个标签</h3>
+    <% site.tags.sort('name').each(function(item){ %>
+        <% if(item.posts.length){ %>
+            <div class="mdui-chip">
+                <!--<span class="mdui-chip-icon"><%= item.posts.length %></span>-->
+                <a class="mdui-chip-title mdui-text-color-black-disabled" href="#<%= item.name %>" style="text-decoration:none;">
+                    <%= item.name %>
+                </a>
+            </div>
+        <% } %>
+    <% }); %>
+</div>
+</br>
+<!-- 标签列表 -->
+<div class="mdui-center post-content">
+    <div class="mdui-panel" mdui-panel="{accordion : true}">
+    <% site.tags.map(function(tag){  %>
+        <div class="mdui-panel-item" id="<%= tag.name %>">
+            <div class="mdui-panel-item-header">
+                <div class="mdui-panel-item-title" id="<%= tag.name %>"><%= tag.name %></div>
+                <div class="mdui-panel-item-summary">共<%= tag.length %>篇</div>
+                <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <div class="mdui-panel-item-body mdui-typo">
+                <% tag.posts.map(function(post){  %>
+                    <span class="mdui-panel-item-summary">
+                        <%= post.date.format('MM-DD') %>
+                        <a class="mdui-panel-item-summary" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
+                    </span>
+                <hr>
+                <% }) %>
+            </div>
+        </div>
+    <% }) %>
+    </div>
+</div>
