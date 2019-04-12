@@ -43,7 +43,7 @@ reward:
 # 开启请前往(https://ziyuan.baidu.com/linksubmit/index)获取baidu-site-verification添加至 mdm/layout/partials/head.ejs 文件中
 # 设置下面为True
 SEO:
-  BaiduAutoPush: true
+  BaiduAutoPush: false
 
 
 
