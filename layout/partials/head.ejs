@@ -1,6 +1,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
+    <meta name="baidu-site-verification" content="5EmnBCPDrY" />
     <title><%= config.title %></title>
     <!--一言-->
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
@@ -16,4 +18,21 @@
     <%- css('css/solarized-light.css')%>
     <!--本地搜索-->
     <script src="js/search.js"></script>
+    <!--自动提交给百度-->
+    <% if(theme.SEO.BaiduAutoPush==true){ %>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <% } %>
 </head>
