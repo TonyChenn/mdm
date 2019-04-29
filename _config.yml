@@ -49,8 +49,8 @@ SEO:
 
 
 # 首页顶部图片地址
-index_header_img: https://ws1.sinaimg.cn/large/006PThdlgy1g1nfcrzwx2j318g0p0wl6.jpg
+index_header_img: https://s2.ax1x.com/2019/04/28/EQebUx.jpg
 # 文章内顶部图片没有设置或者图片出错后显示的默认图片
-default_error_img: https://ws1.sinaimg.cn/large/006PThdlgy1g1nfcrzwx2j318g0p0wl6.jpg
+default_error_img: https://s2.ax1x.com/2019/04/28/EQebUx.jpg
 # 博文条目没有指定图片,默认图片
-no_img: https://ws1.sinaimg.cn/thumbnail/006PThdlly1g1ng95b96oj30dw08odfn.jpg
+no_img: https://s2.ax1x.com/2019/04/28/EQe4v4.jpg
