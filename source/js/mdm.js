@@ -17,6 +17,10 @@ $(function(){
         return false;
     });
 
+    //表格样式
+    $('table').addClass("mdui-table mdui-table-hoverable")
+
+
     function fix_footer_pos(){
         $("footer").removeClass("fixed-bottom");
         var contentHeight = document.body.scrollHeight,//网页正文全文高度
@@ -31,3 +35,4 @@ $(function(){
     fix_footer_pos();
     $(window).resize(fix_footer_pos);
 });
+

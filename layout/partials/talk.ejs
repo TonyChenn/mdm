@@ -1,0 +1,27 @@
+<% if(theme.Valine.show_talk == true){ %>
+    <div class="mdui-shadow-2 mdui-center" style="max-width: 900px; ">
+        <div class="mdui-center" style="width:97%;">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div class="comment"></div>
+            </article>
+        </div></br>
+        <div></br></br></br></div>
+    </div>
+<% } %>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+	new Valine({
+		// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+		av: AV,
+		el: '.comment',
+		app_id: '<%= theme.Valine.app_id %>',
+		app_key: '<%= theme.Valine.app_key %>',
+		notify: false, //评论提醒
+		verify: false, //验证码
+		avatar: '<%= theme.Valine.avatar %>',
+		placeholder: '<%= theme.Valine.placeholder %>'
+	});
+</script>
