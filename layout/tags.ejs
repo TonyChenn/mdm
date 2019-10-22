@@ -5,7 +5,6 @@
     <% site.tags.sort('name').each(function(item){ %>
         <% if(item.posts.length){ %>
             <div class="mdui-chip">
-                <!--<span class="mdui-chip-icon"><%= item.posts.length %></span>-->
                 <a class="mdui-chip-title mdui-text-color-black-disabled" href="#<%= item.name %>" style="text-decoration:none;">
                     <%= item.name %>
                 </a>

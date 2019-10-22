@@ -1,48 +1,23 @@
 <!--博文详细内容-->
 <%- css('css/post.css')%>
-<div id="">
-    <div id="content" class="inner">
-      <div id="main-col" class="alignleft">
-        <div id="wrapper">
-          <article>
-            <%- page.content%>
-          </article>
-        </div>
-      </div>
-    
-      <aside id="sidebar" class="alignright mdui-shadow-2">
-        <div class="widget">
-          <h3 class="title">目录</h3>
-          <%- toc(page.content, {
-            class: 'post-toc',
-            list_number: false
-          }) %> 
-        </div>
-      </aside>
+<div id="content" class="inner">
+  <div id="main-col" class="alignleft">
+    <div id="wrapper">
+      <article>
+        <%- page.content%>
+      </article>
     </div>
-</div>
+  </div>
 
-  <!--
-  <aside class="post-content mdui-center mdui-shadow-12">
-    <h4>TOC</h4>
-    <%- toc(page.content, {
-      class: 'post-toc',
-      list_number: false
-    }) %> 
+  <aside id="sidebar" class="alignright mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <%- toc(page.content, {
+        class: 'post-toc',
+        list_number: false
+      }) %> 
+    </div>
   </aside>
--->
-
-<!--
-  <main class="mdui-center mdui-shadow-2" style="max-width: 900px;">
-    <div class="mdui-center" style="width: 97%;">
-      <%-page.content %>
-    </div>
-  </main>
-
-
+</div>
 </article>
--->
-
-
-<!--<%- partial('partials/talk') %>-->
-
+<!-- <%- partial('partials/talk') %> -->

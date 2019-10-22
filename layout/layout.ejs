@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
 <!--Head-->
-<%- partial('partials/head',{cache: true})%>
-
+<%- fragment_cache('head', function(){
+  return partial('partials/head');
+}) %>
 <!--header_bar-->
-<%- partial('partials/headerbar', {cache: true})%>
-
+<%- fragment_cache('headerbar', function(){
+  return partial('partials/headerbar');
+}) %>
 <!--Header-->
 <%- partial('partials/header',{cache: true})%>
 <body>
@@ -14,7 +16,11 @@
   </div>
 </body>
 <!--goTop-->
-<%- partial('partials/gotop', {cache: true}) %>
+<%- fragment_cache('gotop', function(){
+  return partial('partials/gotop');
+}) %>
 <!--footer-->
-<%- partial('partials/footer', {cache: true}) %>
+<%- fragment_cache('footer', function(){
+  return partial('partials/footer');
+}) %>
 </html>

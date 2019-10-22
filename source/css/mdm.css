@@ -7,15 +7,17 @@ h1, h2,h3{
 body {
   background: #f5f5f5;
 }
-
+.footer{
+  width: 100%;
+  position:fixed;
+  bottom: 0px;
+}
 
 #recent-posts{
   padding-top:5px;width:95%;max-width:550pt;text-align:center;
 }
 
-#bottom-inner{
-  text-align: center;
-}
+
 #bar{
   position: fixed;
   width: 100%;
@@ -154,9 +156,6 @@ width: 100%; max-height: 600px; background: #3F51B5; position: relative;
 /*代码背景*/
 figure{
   background:#CFD8DC;
-  width: 100%;
-  margin: 0%;
-  overflow-x: auto;
   border-radius: 10px 10px 10px 10px;
 }
 figure table tbody{

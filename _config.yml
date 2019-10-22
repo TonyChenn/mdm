@@ -49,8 +49,10 @@ SEO:
 
 
 # 首页顶部图片地址
-index_header_img: https://s2.ax1x.com/2019/04/28/EQebUx.jpg
+index_header_img: https://github.com/TonyChenn/BlogPicture/raw/master/_main/img1.jpg
 # 文章内顶部图片没有设置或者图片出错后显示的默认图片
-default_error_img: https://s2.ax1x.com/2019/04/28/EQebUx.jpg
+default_error_img: https://github.com/TonyChenn/BlogPicture/raw/master/_main/err.jpg
 # 博文条目没有指定图片,默认图片
-no_img: https://s2.ax1x.com/2019/04/28/EQe4v4.jpg
+no_img: https://github.com/TonyChenn/BlogPicture/raw/master/_main/img1.jpg
+# 图片没有加载完成时显示的图片
+load_img: https://github.com/TonyChenn/BlogPicture/raw/master/_main/loading.gif
