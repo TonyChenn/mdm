@@ -30,8 +30,17 @@
             <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
             <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
         </div>-->
-        <i class="mdui-icon material-icons">brightness_7</i>
+
+        <button onclick="themeChange()"
+                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+                mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons">brightness_7</i>
+        </button>
+
+        
         <i class="mdui-icon material-icons">brightness_4</i>
-        <button onclick="location.reload()" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></button>
+        <button onclick="location.reload()" class="mdui-btn mdui-btn-icon mdui-ripple">
+            <i class="mdui-icon material-icons">refresh</i>
+        </button>
     </div>
 </div>

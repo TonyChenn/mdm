@@ -4,19 +4,59 @@ a{
 h1, h2,h3{
   color: #3F51B5;
 }
-body {
+
+/*背景*/
+body{
   background: #f5f5f5;
 }
+.mdm_theme_dark{
+  background: #303030;
+}
+/*bar*/
+.mdui-color-indigo{
+  background-color: #3F51B5;
+}
+.mdm_theme_dark .mdui-color-indigo{
+  background-color: #212121 !important;
+}
+/*summary*/
+#summary{
+  color: #424242;
+}
+.mdm_theme_dark #summary{
+  color: #9E9E9E;
+}
+/*标题*/
+.title_font{
+  font-size: 1.3em;
+  color: #f5f5f5;
+}
+.mdm_theme_dark .title_font{
+  font-size: 1.3em;
+  color: #9E9E9E;
+}
+#post-item{
+  margin-top: 30px;
+  background-color: #fff;
+}
+/*post item背景*/
+.mdm_theme_dark #post-item{
+  margin-top: 30px;
+  background-color: #424242 !important;
+}
+
 .footer{
   width: 100%;
   position:fixed;
   bottom: 0px;
 }
+.fixPosition{
+  position: fixed;
+}
 
 #recent-posts{
   padding-top:5px;width:95%;max-width:550pt;text-align:center;
 }
-
 
 #bar{
   position: fixed;
@@ -100,13 +140,6 @@ width: 100%; max-height: 600px; background: #3F51B5; position: relative;
   height: 56%;
   max-width: 800px;
   max-height: 450px;
-}
-
-
-
-.title_font{
-  font-size: 1.3em;
-  color: #f5f5f5;
 }
 .float_left{
   float: left;

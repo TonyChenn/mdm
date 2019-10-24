@@ -5,7 +5,7 @@
 <% if (page.posts.length > 0) { %>
   <div id="recent-posts" class="mdui-center">
     <% page.posts.sort('date', -1).limit(10).each(post => { %>
-      <div class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
+      <div id="post-item" class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
         <!--图片或视频部分-->
         <div class="mdui-card-media">
           <% if(post.video){ %>
@@ -24,11 +24,11 @@
         <!--描述-->
         <div class="mdui-card-actions">
           <% if(post.video){ %>
-            <p class="mdui-text-color-black-icon" style="text-align:center; font-weight:100;"><%- post.content %></p>
+            <p id="summary" class="mdui-text-color-black-icon" style="text-align:center; font-weight:100;"><%- post.content %></p>
           <% }else{ %>
 
           <% if(post.description){ %>
-            <p class="mdui-text-color-black-icon" style="text-align:left;"><%- post.description %></p>
+            <p id="summary" style="text-align:left;"><%- post.description %></p>
           <%}%>
           <%}%>
           <div class="mdui-divider"></div>
@@ -41,7 +41,6 @@
             <% } %>
         </div>
       </div>
-      </br></br>
     <% }); %>
   </div>
 <% } %>

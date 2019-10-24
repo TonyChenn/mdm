@@ -1,18 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.alignleft {
+.article-content{
+  width: 97%;
+  max-width: 900px;
   float: left;
 }
-.alignright {
-  float: right;
+#sidebar .widget .title {
+  padding: 15px 20px;
+  font-size: 1em;
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
 }
 
-.inner {
-  width: 1200px;
-  margin: 0 auto;
-}
+/* 
 
 @media screen and (max-width: 1260px) {
   .inner {
@@ -35,14 +33,12 @@
   }
 }
 
-/*不能删*/
 @media screen and (max-width: 1260px) {
   #wrapper {
     margin-right: 300px;
   }
 }
 
-/*不能删*/
 @media screen and (max-width: 900px) {
   #wrapper {
     margin-right: 0;
@@ -85,8 +81,4 @@ article{
 #sidebar .widget dl {
   list-style: none;
 }
-
-
-
-
-
+ */
