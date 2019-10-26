@@ -14,13 +14,14 @@
   <div class="mdui-center" id="content-inner">
     <%- body %>
   </div>
+  <!--footer-->
+  <%- fragment_cache('footer', function(){
+    return partial('partials/footer');
+  }) %>
 </body>
 <!--goTop-->
 <%- fragment_cache('gotop', function(){
   return partial('partials/gotop');
 }) %>
-<!--footer-->
-<%- fragment_cache('footer', function(){
-  return partial('partials/footer');
-}) %>
+
 </html>

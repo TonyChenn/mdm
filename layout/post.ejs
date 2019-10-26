@@ -1,21 +1,21 @@
 <!--博文详细内容-->
 <%- css('css/post.css')%>
-<div id="content-col" class="article-content">
-    <div id="wrapper">
-      <article>
-        <%- page.content%>
-      </article>
+<div>
+  <div class="article-content mdui-center">
+    <article>
+      <%- page.content%>
+    </article>
+  </div>
+
+
+  <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <%- toc(page.content, {
+        class: 'post-toc',
+        list_number: false
+      }) %> 
     </div>
-  </div>
-
-
-<aside id="sidebar" class="mdui-shadow-2 mdui-hoverable" style="float: right;">
-  <div class="widget">
-    <h3 class="title">目录</h3>
-    <%- toc(page.content, {
-      class: 'post-toc',
-      list_number: false
-    }) %> 
-  </div>
-</aside>
+  </aside>
+</div>
 <!-- <%- partial('partials/talk') %> -->

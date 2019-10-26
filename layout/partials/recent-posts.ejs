@@ -13,7 +13,7 @@
               <source src="<%- post.video %>" type="video/mp4" >
             </video>
           <% }else{ %>
-            <img class="img_item mdui-color-theme mdui-text-color-theme mdui-img-fluid" src="<%- post.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
+            <img class="img_item mdui-img-fluid" src="<%- post.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
             <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
               <div class="mdui-card-primary">
                   <div class="title_font float_left mdui-card-primary-title"><%- post.title %></div>
@@ -32,7 +32,7 @@
           <%}%>
           <%}%>
           <div class="mdui-divider"></div>
-            <span class="info mdui-text-color-black-disabled">
+            <span class="info">
               <i class="mdui-icon material-icons">access_time</i>
               <%- post.date.format("YYYY-MM-DD") %>
             </span>

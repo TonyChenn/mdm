@@ -1,6 +1,3 @@
-var DEF_PRIMARY='indigo';
-var DEF_ACCENT='pink';
-
 $(function(){
     var header_img_width=$(".header-box").height();
     $(window).scroll(function(){
@@ -30,7 +27,6 @@ $(function(){
 
     //设置主题
     var da = getCookie('IsDayTime');
-    console.log('cookie value is '+da);
     if(da==null || da=='' || da=='true'){
         setTheme('true');
     }
@@ -73,14 +69,13 @@ function getCookie(name){
 //true  day
 //false night
 function setTheme(DayTime){
-    console.log('set theme value '+DayTime);
     if(DayTime=='true'){
-        console.log('remove');
         $('body').removeClass('mdm_theme_dark');
+        $('#themeIcon').text("brightness_7");
     }
     else{
-        console.log('add');
         $('body').addClass('mdm_theme_dark');
+        $('#themeIcon').text("brightness_4");
     }
 }
 
@@ -89,4 +84,8 @@ function showOverlay(time){
     setTimeout(function () {
       mdui.JQ.hideOverlay();
     }, time);
+}
+
+function LazyLoad(){
+    scrollTop=window.scrollY;
 }
