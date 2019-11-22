@@ -1,21 +1,22 @@
 <!-- 标签云 -->
-<div class="post-content mdui-center mdui-shadow-2">
-    <!--标签云-->
-    <h3>共计&nbsp;<%= site.tags.length %>&nbsp;个标签</h3>
-    <% site.tags.sort('name').each(function(item){ %>
-        <% if(item.posts.length){ %>
-            <div class="mdui-chip">
-                <a class="mdui-chip-title mdui-text-color-black-disabled" href="#<%= item.name %>" style="text-decoration:none;">
-                    <%= item.name %>
-                </a>
-            </div>
-        <% } %>
-    <% }); %>
-</div>
-</br>
-<!-- 标签列表 -->
 <div class="mdui-center post-content">
-    <div class="mdui-panel" mdui-panel="{accordion : true}">
+
+    <h1>Tags</h1>
+    <div class="mdui-shadow-2 post_tag">
+        <!--标签云-->
+        <h3>共计&nbsp;<%= site.tags.length %>&nbsp;个标签</h3>
+        <% site.tags.sort('name').each(function(item){ %>
+            <% if(item.posts.length){ %>
+                <div class="mdui-chip">
+                    <a class="mdui-chip-title mdui-text-color-black-disabled" href="#<%= item.name %>" style="text-decoration:none;">
+                        <%= item.name %>
+                    </a>
+                </div>
+            <% } %>
+        <% }); %>
+    </div>
+    <!-- 标签列表 -->
+    <div class="mdui-panel post_tag" mdui-panel="{accordion : true}">
     <% site.tags.map(function(tag){  %>
         <div class="mdui-panel-item" id="<%= tag.name %>">
             <div class="mdui-panel-item-header">
@@ -34,5 +35,7 @@
             </div>
         </div>
     <% }) %>
-    </div>
+    </div> 
 </div>
+
+
