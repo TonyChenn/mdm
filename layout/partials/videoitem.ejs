@@ -1,0 +1,16 @@
+<div id="post-item" class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
+    <!--视频-->
+    <div class="mdui-card-media">
+        <video class="mdui-video-fluid" style="max-height: 450px;" controls>
+            <source src="<%- post.video %>" type="video/mp4" >
+        </video>
+    </div>
+    <div id="summary" style="text-align:center; font-weight:100;">
+        <%- post.content %>
+    </div>
+    <div class="mdui-divider"></div>
+    <span class="info" style="float: left; margin-left: 2%;">
+        <i class="mdui-icon material-icons">access_time</i>
+        <%- post.date.format("YYYY-MM-DD") %>
+    </span>
+</div>

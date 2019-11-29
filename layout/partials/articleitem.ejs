@@ -1,0 +1,21 @@
+<div id="post-item" class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
+        <!--文章-->
+        <div class="mdui-card-media">
+            <img class="img_item" src="<%- post.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
+                <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+                    <div class="mdui-card-primary">
+                        <div class="title_font float_left mdui-card-primary-title"><%- post.title %></div>
+                    </div>
+                </div>
+        </div>
+        <!--描述-->
+        <% if(post.description){ %>
+            <p id="summary"><%- post.description %></p>
+            <div class="mdui-divider"></div>
+        <%}%>
+        <span class="info" style="float: left; margin-left: 2%;">
+            <i class="mdui-icon material-icons">access_time</i>
+            <%- post.date.format("YYYY-MM-DD") %>
+        </span>
+        <a class="info mdui-text-color-pink" href="<%- url_for(post.path) %>" style="float:right; margin-right: 2%;">去围观</a>
+    </div>
