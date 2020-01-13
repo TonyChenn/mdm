@@ -203,22 +203,12 @@ width: 100%; max-height: 600px; position: relative;
 /* md文本的样式
 */
 
-
-/*代码背景*/
-figure{
-  background:#CFD8DC;
-  border-radius: 10px 10px 10px 10px;
-}
-figure table tbody{
-  table-layout: inherit;
-}
-
-
-
-
 /*图片*/
 img{
-  width: 100%;
+  /* width: 100%; */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 /*重写覆盖MDUI中的字体大小*/
 h1{

@@ -8,3 +8,43 @@
   border-bottom: 1px solid #ddd;
   font-weight: normal;
 }
+
+article p{
+  color: rgba(0,0,0,0.54);
+}
+article li{
+  color: rgba(0,0,0,0.54);
+}
+/*代码背景*/
+figure{
+  background:#CFD8DC;
+  border-radius: 10px 10px 10px 10px;
+}
+figure table tbody{
+  table-layout: inherit;
+}
+.mdm_talk{
+  background-color: #fff;
+  max-width: 900px;
+}
+
+
+
+
+.mdm_theme_dark article p{
+  color: rgba(255,255,255,0.54);
+}
+
+.mdm_theme_dark article li{
+  color: rgba(255,255,255,0.54);
+}
+
+.mdm_theme_dark figure tbody{
+  background: rgba(255,255,255,0.54);
+}
+
+.mdm_theme_dark .mdm_talk{
+  background-color: #424242 !important;
+  max-width: 900px;
+}
+

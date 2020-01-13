@@ -1,5 +1,5 @@
 <% if(theme.Valine.show_talk == true){ %>
-    <div class="mdui-shadow-2 mdui-center" style="max-width: 900px; ">
+    <div class="mdui-shadow-2 mdui-center mdm_talk">
         <div class="mdui-center" style="width:97%;">
             <article class="mdui-typo">
                 <h2>评论</h2>
@@ -20,7 +20,7 @@
 		app_id: '<%= theme.Valine.app_id %>',
 		app_key: '<%= theme.Valine.app_key %>',
 		notify: true, //评论提醒
-		verify: false, //验证码
+		verify: true, //验证码
 		avatar: '<%= theme.Valine.avatar %>',
 		placeholder: '<%= theme.Valine.placeholder %>'
 	});
