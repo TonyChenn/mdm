@@ -35,9 +35,9 @@
     color: rgb(106, 153, 85);
 }
 
-.mdm_theme_dark a{
+.mdm_theme_dark .article-content a{
   color: #F44336;
 }
-.mdm_theme_dark h1, h2,h3{
+.mdm_theme_dark .article-content h1, h2,h3{
   color: #009688;
 }
