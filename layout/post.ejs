@@ -1,14 +1,17 @@
 <!--博文详细内容-->
 <%- css('css/post.css')%>
 <div>
-  <div class="article-content mdui-center">
-    <article>
+  <div class="">
+    <article class="article-content mdui-container mdui-center mdui-shadow-12">
       <%- page.content%>
     </article>
+    <div class="article-content mdui-container mdui-center mdui-shadow-12">
+      <%- partial('partials/talk') %>
+    </div>
   </div>
 
 
-  <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+  <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
     <div class="widget">
       <h3 class="title">目录</h3>
       <%- toc(page.content, {
@@ -16,6 +19,5 @@
         list_number: false
       }) %> 
     </div>
-  </aside>
+  </aside> -->
 </div>
-<%- partial('partials/talk') %>

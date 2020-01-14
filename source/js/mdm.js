@@ -19,11 +19,14 @@ $(function(){
         return false;
     });
 
-    //表格样式
-    $('table').addClass("mdui-table mdui-table-hoverable")
+    //只改变表格样式，不改变代码的样式
+    $('table thead').parent('table').addClass("mdui-table mdui-table-hoverable")
 
     //表格超界
     $('.mdui-table').wrap("<div class='mdui-table-fluid'></div>");
+
+    //代碼塊
+    //$('figure tbody').addClass('mdui-container mdui-typo');
 
     //设置主题
     var da = getCookie('IsDayTime');

@@ -16,7 +16,7 @@
         <% }); %>
     </div>
     <!-- 标签列表 -->
-    <div class="mdui-panel post_tag" mdui-panel="{accordion : true}">
+    <div class="mdui-shadow-2 mdui-panel post_tag_list" mdui-panel="{accordion : true}">
     <% site.tags.map(function(tag){  %>
         <div class="mdui-panel-item" id="<%= tag.name %>">
             <div class="mdui-panel-item-header">
@@ -26,10 +26,10 @@
             </div>
             <div class="mdui-panel-item-body mdui-typo">
                 <% tag.posts.map(function(post){  %>
-                    <span class="mdui-panel-item-summary">
+                    <span class="mdui-panel-item-summary post-time">
                         <%= post.date.format('MM-DD') %>
-                        <a class="mdui-panel-item-summary" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
                     </span>
+                    <a class="mdui-panel-item-summary post-name" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
                 <hr>
                 <% }) %>
             </div>

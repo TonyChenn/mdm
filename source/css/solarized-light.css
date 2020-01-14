@@ -8,7 +8,7 @@
 .keyword,
 .selector-tag,
 .addition {
-  color: #859900;
+  color: #a71d5d;
 }
 
 /* Solarized Cyan */
@@ -18,7 +18,7 @@
 .literal,
 .doctag,
 .regexp {
-  color: #d14;
+  color: #859900;
 }
 
 /* Solarized Blue */
@@ -49,7 +49,7 @@
 .selector-attr,
 .selector-pseudo,
 .link {
-  color: #cb4b16;
+  color: #0086b3;
 }
 
 /* Solarized Red */
@@ -68,4 +68,7 @@
 
 .strong {
   font-weight: bold;
+}
+.line{
+  color: black;
 }

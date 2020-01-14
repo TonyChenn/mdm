@@ -4,48 +4,43 @@ a{
 h1, h2,h3{
   color: #3F51B5;
 }
+/*重写覆盖MDUI中的字体大小*/
+h1{
+  font-size: 1.5em;
+  display: block;
+}
+h2{
+  font-size: 1.3em;
+}
+h3{
+  font-size: 1.1em;
+}
+h4, h5, h6{
+  font-size: 1em;
+}
 
 /*背景*/
 body{
   background: #f5f5f5;
 }
-.mdm_theme_dark{
-  background: #303030;
-}
 /*bar*/
 .mdui-color-indigo{
   background-color: #3F51B5;
 }
-.mdm_theme_dark .mdui-color-indigo{
-  background-color: #212121 !important;
-}
 /*summary*/
 #summary{
   color: #424242;
-}
-.mdm_theme_dark #summary{
-  color: #9E9E9E;
 }
 /*标题*/
 .title_font{
   font-size: 1.3em;
   color: #f5f5f5;
 }
-.mdm_theme_dark .title_font{
-  font-size: 1.3em;
-  color: #9E9E9E;
-}
 #post-item{
   margin-bottom: 20pt;
   background-color: #fff;
   border-radius: 15px;
 }
-/*post item背景*/
-.mdm_theme_dark #post-item{
-  margin-bottom: 20pt;
-  background-color: #424242 !important;
-}
-
 .info{
   float: left;
   margin-top: 10px;
@@ -53,20 +48,8 @@ body{
   font-size: 1em;
   color: rgba(0,0,0,0.54);
 }
-.mdm_theme_dark .info{
-  float: left;
-  margin-top: 10px;
-  margin-left: 5px;
-  font-size: 1em;
-  color: rgba(255,255,255,0.54);
-}
 
 
-/* .footer{
-  width: 100%;
-  position:fixed;
-  bottom: 0px;
-} */
 .fixPosition{
   position: fixed;
 }
@@ -80,7 +63,7 @@ body{
 #bar{
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 4;
 }
 /*一言*/
 #hitokoto{
@@ -163,10 +146,21 @@ width: 100%; max-height: 600px; position: relative;
   color: #37474f;
 }
 .post_tag{
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 20px;
 }
-
+.mdui-panel-item{
+  background-color: white;
+}
+.mdui-panel-item-title{
+  color: black;
+}
+.mdui-panel-item-body .post-time,
+.mdui-panel-item-header .mdui-panel-item-summary{
+  color: #9E9E9E;
+}
 
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
@@ -205,31 +199,14 @@ width: 100%; max-height: 600px; position: relative;
 
 /*图片*/
 img{
-  /* width: 100%; */
   max-width: 100%;
   height: auto;
   display: block;
 }
-/*重写覆盖MDUI中的字体大小*/
-h1{
-  font-size: 1.5em;
-}
-h2{
-  font-size: 1.3em;
-}
-h3{
-  font-size: 1.1em;
-}
-h4, h5, h6{
-  font-size: 1em;
-}
-/*字体*/
-.post-content p,
-.post-content li,
-.post-content tr{
-  line-height: 1.5em;
-  letter-spacing: 1px;
-  font-weight: 300;
+
+
+article p{
+  font-size: 17px;
 }
 #sidebar{
   width: 30%;

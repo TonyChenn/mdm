@@ -22,10 +22,10 @@
             </div>
             <div class="mdui-panel-item-body mdui-typo">
                 <% years[year].map(function(post){  %>
-                  <span class="mdui-panel-item-summary">
+                  <span class="mdui-panel-item-summary post-time">
                     <%= post.date.format('MM-DD') %>
-                    <a class="mdui-panel-item-summary" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
                   </span>
+                  <a class="mdui-panel-item-summary post-name" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
                 <hr>
                 <% }) %>
             </div>
