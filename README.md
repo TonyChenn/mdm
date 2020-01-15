@@ -1,6 +1,11 @@
 # hexo-theme-mdm
 一款Hexo端优美的MaterialDesign风格主题，简洁，轻巧，麻麻再也不用担心打开博客速度慢了
 
+
+更新介绍：
+2020.1.14
+添加图片预览，优化夜间模式，文章代码排版。
+
 # 介绍
 1. 响应式布局，适配移动端和PC端
 2. 优美MaterialDesign设计
@@ -8,14 +13,15 @@
 
 # PC端
 
-![](https://ws1.sinaimg.cn/large/006PThdlly1g1v7384panj31lk0wshdu.jpg)
-![](https://ws1.sinaimg.cn/large/006PThdlly1g1v74lyrr8j31lk0wsx6p.jpg)
+![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/img1.jpg)
+![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/img2.jpg)
+![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/about.jpg)
 
 # 移动端
 
-![](https://ws1.sinaimg.cn/large/006PThdlly1g1v750ht1rj308w0fpwla.jpg)
-![](https://ws1.sinaimg.cn/large/006PThdlly1g1v75a9cocj308u0fq0wl.jpg)
-![](https://ws1.sinaimg.cn/large/006PThdlly1g1v75jueoxj308u0fq0wq.jpg)
+![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/phone_main.jpg)
+![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/phone_tag.jpg)
+![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/phone_archives.jpg)
 
 # 案例
 [TonyChenn.cn](https://Tonychenn.cn)
