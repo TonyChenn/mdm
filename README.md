@@ -22,16 +22,13 @@
 ![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/img2.jpg)
 ![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/about.jpg)
 
-# :calling:移动端
+# :iphone:移动端
 
 ![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/phone_main.jpg)
 ![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/phone_tag.jpg)
 ![](https://raw.githubusercontent.com/TonyChenn/BlogPicture/master/2019/0406/phone_archives.jpg)
 
-# :sunny:案例
-[TonyChenn.cn](https://Tonychenn.cn)
-
-# :octocat:安装
+# :cd:安装
 
 ## 下载
 ```bash
