@@ -1,11 +1,11 @@
 <h1 align="center">一款Hexo端优美的MaterialDesign风格主题 MDM</h1>
 
 <h3 align="center">简洁，轻巧，麻麻再也不用担心打开博客速度慢了</h3>
-
+<br><br>
 
 更新介绍：
-2020.1.14
-添加图片预览，优化夜间模式，文章代码排版。
+
+- 2020.1.14 : 添加图片预览，优化夜间模式，文章代码排版。
 
 # :art:演示
 [tonychenn.cn](https://tonychenn.cn) 觉得不错，点个Star
