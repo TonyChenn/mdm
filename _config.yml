@@ -42,8 +42,12 @@ reward:
 # 自动提交百度搜索引擎
 # 开启请前往(https://ziyuan.baidu.com/linksubmit/index)获取baidu-site-verification添加至 mdm/layout/partials/head.ejs 文件中
 # 设置下面为True
+
+# GoogleAd --google广告开关  https://www.google.com/adsense
+# 开启请到 partials/head.ejs 替换为自己的
 SEO:
   BaiduAutoPush: true
+  GoogleAd: true
 
 # 首页顶部图片地址
 index_header_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg

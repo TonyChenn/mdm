@@ -20,7 +20,7 @@
     <!--本地搜索-->
     <!-- <script src="js/search.js"></script> -->
     <!--自动提交给百度-->
-    <% if(theme.SEO.BaiduAutoPush==true){ %>
+    <% if(theme.SEO.BaiduAutoPush == true){ %>
     <script>
         (function(){
             var bp = document.createElement('script');
@@ -35,5 +35,10 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
+    <% } %>
+
+    <!---google ad config-->
+    <% if(theme.SEO.GoogleAd==true){ %>
+        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <% } %>
 </head>
