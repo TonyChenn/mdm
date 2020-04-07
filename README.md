@@ -3,7 +3,11 @@
 <h3 align="center">简洁，轻巧，麻麻再也不用担心打开博客速度慢了</h3>
 <br><br>
 
-更新介绍：
+# 推荐
+1. [https://github.com/TonyChenn/HexoBlogWriteTool](Hexo 博文管理工具，麻麻再也不用担心忘记管理hexo博文的命令啦)
+2. [https://github.com/TonyChenn/BlogExportTool](CSDN博文导出工具)
+
+# 更新介绍：
 
 - 2020.1.14 : 添加图片预览，优化夜间模式，文章代码排版。
 
