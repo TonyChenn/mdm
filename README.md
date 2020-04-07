@@ -4,8 +4,8 @@
 <br><br>
 
 # 推荐
-1. [https://github.com/TonyChenn/HexoBlogWriteTool](Hexo 博文管理工具，麻麻再也不用担心忘记管理hexo博文的命令啦)
-2. [https://github.com/TonyChenn/BlogExportTool](CSDN博文导出工具)
+1. [Hexo 博文管理工具，麻麻再也不用担心忘记管理hexo博文的命令啦](https://github.com/TonyChenn/HexoBlogWriteTool)
+2. [CSDN博文导出工具](https://github.com/TonyChenn/BlogExportTool)
 
 # 更新介绍：
 
