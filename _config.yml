@@ -45,9 +45,12 @@ reward:
 
 # GoogleAd --google广告开关  https://www.google.com/adsense
 # 开启请到 partials/head.ejs 替换为自己的
+
+# GreyMode 全局灰色
 SEO:
   BaiduAutoPush: true
   GoogleAd: true
+  GreyMode: true
 
 # 首页顶部图片地址
 index_header_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg

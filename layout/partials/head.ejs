@@ -17,6 +17,11 @@
     <%- js('js/mdm.js') %>
     <!--高亮-->
     <%- css('css/solarized-light.css')%>
+    <!--全局变灰-->
+    <% if(theme.SEO.GreyMode == true) { %>
+        <%- css('css/grey.css')%>
+    <% } %>
+
     <!--本地搜索-->
     <!-- <script src="js/search.js"></script> -->
     <!--自动提交给百度-->
