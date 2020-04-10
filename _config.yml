@@ -24,11 +24,19 @@ Icon:
 #  评论提醒,验证码: 默认关闭，在post.ejs文件内
 #  更多配置查看官网(https://valine.js.org/)  
 Valine:
-  show_talk: true
+  show_talk: false
   app_id: Jng2NUkg6zUYlLxMxl4S91kW-gzGzoHsz
   app_key: NKjBMKVPJv3CggFYFSUkUAvR
   avatar: retro
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+
+Gitalk:
+  enable: true
+  githubID: tonychenn
+  repo: tonychenn.github.io
+  ClientID: ecbf6316c9aa7a6bfd7a
+  ClientSecret: 5c875e5986ed75f4509d97acd16628b97f7506f1
+  adminUser: tonychenn
 
 #  是否开启文章目录
 toc: false
@@ -46,11 +54,17 @@ reward:
 # GoogleAd --google广告开关  https://www.google.com/adsense
 # 开启请到 partials/head.ejs 替换为自己的
 
-# GreyMode 全局灰色
+# GreyMode 全局灰色（哀悼模式）
 SEO:
   BaiduAutoPush: true
   GoogleAd: true
-  GreyMode: true
+  GreyMode: false
+
+# 站点地图
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # 首页顶部图片地址
 index_header_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg

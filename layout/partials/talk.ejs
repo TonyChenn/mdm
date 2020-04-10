@@ -7,20 +7,48 @@
             </article>
         </div>
     </div>
+	<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+			av: AV,
+			el: '.comment',
+			app_id: '<%= theme.Valine.app_id %>',
+			app_key: '<%= theme.Valine.app_key %>',
+			notify: true, //评论提醒
+			verify: true, //验证码
+			avatar: '<%= theme.Valine.avatar %>',
+			placeholder: '<%= theme.Valine.placeholder %>'
+		});
+	</script>
 <% } %>
 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-	new Valine({
-		// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-		av: AV,
-		el: '.comment',
-		app_id: '<%= theme.Valine.app_id %>',
-		app_key: '<%= theme.Valine.app_key %>',
-		notify: true, //评论提醒
-		verify: true, //验证码
-		avatar: '<%= theme.Valine.avatar %>',
-		placeholder: '<%= theme.Valine.placeholder %>'
-	});
-</script>
+<% if(theme.Gitalk.enable){ %>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+
+    <div class="mdui-center">
+        <div class="mdui-center">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div id="gitalk-container"></div>
+            </article>
+        </div>
+    </div>
+
+  	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: '<%=theme.Gitalk.ClientID%>',
+			clientSecret: '<%=theme.Gitalk.ClientSecret%>',
+			repo: '<%=theme.Gitalk.repo%>',
+			owner: '<%=theme.Gitalk.githubID%>',
+			admin: ['<%=theme.Gitalk.adminUser%>'],
+			id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50 ，so use md5
+			distractionFreeMode: true  // Facebook-like distraction free mode
+		})
+		gitalk.render('gitalk-container')
+	</script>
+<% } %>
+
