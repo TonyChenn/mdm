@@ -1,6 +1,7 @@
 candy
-source/edit
 source/resume
 source/video
+source/.DS_Store
 CNAME
 *.json
+.DS_Store

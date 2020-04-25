@@ -47,6 +47,12 @@ reward:
   alipay-img: 
   wechat-img:
 
+# 分享
+# 可选有 qq,qzone,wechat,douban,facebook,twitter,google
+share:
+  enable: true
+
+
 # 自动提交百度搜索引擎
 # 开启请前往(https://ziyuan.baidu.com/linksubmit/index)获取baidu-site-verification添加至 mdm/layout/partials/head.ejs 文件中
 # 设置下面为True
