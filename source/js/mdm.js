@@ -1,30 +1,31 @@
+var $$ = mdui.JQ;
 $(function(){
-    var header_img_width=$(".header-box").height();
+    var header_img_width=$$(".header-box").height();
     $(window).scroll(function(){
-        if($(window).scrollTop()>header_img_width-50){
-            $(".goTop").fadeIn(100);
-            $("#bar").removeClass("mdui-shadow-0")
-            $("#bar").addClass("mdui-color-indigo")
-            $('#sidebar').addClass("fixPosition")
+        if($$(window).scrollTop()>header_img_width-50){
+            $$(".goTop").fadeIn(100);
+            $$("#bar").removeClass("mdui-shadow-0")
+            $$("#bar").addClass("mdui-color-indigo")
+            $$('#sidebar').addClass("fixPosition")
         }else{
-            $(".goTop").fadeOut(100);
-            $("#bar").addClass("mdui-shadow-0");
-            $("#bar").removeClass("mdui-color-indigo")
-            $('#sidebar').removeClass("fixPosition")
+            $$(".goTop").fadeOut(100);
+            $$("#bar").addClass("mdui-shadow-0");
+            $$("#bar").removeClass("mdui-color-indigo")
+            $$('#sidebar').removeClass("fixPosition")
         }
     });
     //返回顶部点击事件
-    $("#btn_mdm_goTop").click(function(){
-        $('body,html').animate({scrollTop:0},100);
+    $$("#btn_mdm_goTop").click(function(){
+        $$('body,html').animate({scrollTop:0},100);
         return false;
     });
-    shareInit();
+    InitShare();
 
     //只改变表格样式，不改变代码的样式
-    $('table thead').parent('table').addClass("mdui-table mdui-table-hoverable")
+    $$('table thead').parent('table').addClass("mdui-table mdui-table-hoverable")
 
     //表格超界
-    $('.mdui-table').wrap("<div class='mdui-table-fluid'></div>");
+    $$('.mdui-table').wrap("<div class='mdui-table-fluid'></div>");
 
     //代碼塊
     //$('figure tbody').addClass('mdui-container mdui-typo');
@@ -74,12 +75,12 @@ function getCookie(name){
 //false night
 function setTheme(DayTime){
     if(DayTime=='true'){
-        $('body').removeClass('mdm_theme_dark');
-        $('#themeIcon').text("brightness_7");
+        $$('body').removeClass('mdm_theme_dark');
+        $$('#themeIcon').text("brightness_7");
     }
     else{
-        $('body').addClass('mdm_theme_dark');
-        $('#themeIcon').text("brightness_4");
+        $$('body').addClass('mdm_theme_dark');
+        $$('#themeIcon').text("brightness_4");
     }
 }
 
@@ -90,18 +91,13 @@ function showOverlay(time){
     }, time);
 }
 
-function LazyLoad(){
-    scrollTop=window.scrollY;
-}
-
 //图片预览
 function createImgPrevious() {
-    var imgs = $(".article-content").find("img");
-    console.log(imgs);
+    var imgs = $$(".article-content").find("img");
     for (var i = 0; i < imgs.length; i++) {
         imgs[i].onclick = function (e) {
             var src = e.srcElement.currentSrc;
-            var _this = $(this);
+            var _this = $$(this);
             console.log(_this);
             createCover(src,_this);
         }
@@ -109,9 +105,9 @@ function createImgPrevious() {
     function createCover(src,_this) {
         console.log(_this);
         console.log(src);
-        var cover = $("<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
-        $("#outerDiv").remove();
-        $("body").append(cover);
+        var cover = $$("<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
+        $$("#outerDiv").remove();
+        $$("body").append(cover);
         imgShow("#outerDiv", "#innerDiv", "#bigImg", _this,src);
 
     }
@@ -119,12 +115,12 @@ function createImgPrevious() {
 
 function imgShow(outerDiv, innerDiv, bigImg, _this,src) {
     //var src = _this.attr("src"); //获取当前点击的common-img元素中的src属性
-    $(bigImg).attr("src", src); //设置#bigImg元素的src属性
+    $$(bigImg).attr("src", src); //设置#bigImg元素的src属性
 
     /*获取当前点击图片的真实大小，并显示弹出层及大图*/
-    $("<img/>").attr("src", src).load(function () {
-        var windowW = $(window).width(); //获取当前窗口宽度
-        var windowH = $(window).height(); //获取当前窗口高度
+    $$("<img/>").attr("src", src).load(function () {
+        var windowW = $$(window).width(); //获取当前窗口宽度
+        var windowH = $$(window).height(); //获取当前窗口高度
         var realWidth = this.width; //获取图片真实宽度
         var realHeight = this.height; //获取图片真实高度
         var imgWidth, imgHeight;
@@ -143,17 +139,17 @@ function imgShow(outerDiv, innerDiv, bigImg, _this,src) {
             imgWidth = realWidth;
             imgHeight = realHeight;
         }
-        $(bigImg).css("width", imgWidth); //以最终的宽度对图片缩放
+        $$(bigImg).css("width", imgWidth); //以最终的宽度对图片缩放
 
         var w = (windowW - imgWidth) / 2; //计算图片与窗口左边距
         var h = (windowH - imgHeight) / 2; //计算图片与窗口上边距
-        $(innerDiv).css({ "top": h, "left": w }); //设置#innerDiv的top和left属性
+        $$(innerDiv).css({ "top": h, "left": w }); //设置#innerDiv的top和left属性
         //console.log('****')
-        $(outerDiv).fadeIn("fast"); //淡入显示#outerDiv
+        $$(outerDiv).fadeIn("fast"); //淡入显示#outerDiv
     });
 
-    $(outerDiv).click(function () { //再次点击淡出消失弹出层
-        $(this).fadeOut("fast");
+    $$(outerDiv).click(function () { //再次点击淡出消失弹出层
+        $$(this).fadeOut("fast");
     });
 }
 setTimeout(function () {
@@ -163,7 +159,7 @@ setTimeout(function () {
 
 
 //share
-const shareInit = (function(){
+const InitShare = (function(){
     let shareItems=document.querySelectorAll('.share-item');
     if(!shareItems || shareItems.length==0) return;
     let curPageUrl=window.location.href;
@@ -173,31 +169,18 @@ const shareInit = (function(){
     if(picUrl=='')
         picUrl='{{ theme.no_img }}';
     
-    let i=0;
-    shareItems.forEach((item)=>{
-        item.removeAttribute('style');
-        item.setAttribute('style','transition-delay: '+ i +'ms;');
-
-        item.onclick=(e)=>{
-            let type=item.getAttribute('id');
-            console.log(type);
-            
-            clickHandle(type,{
-                url: curPageUrl,
-                pic: picUrl,
-                title: curTitle,
-                source: curTitle
-            })
-        }
-        i=i+15;
-    })
+        // clickHandle(type,{
+        //     url: curPageUrl,
+        //     pic: picUrl,
+        //     title: curTitle,
+        //     source: curTitle
+        // })
 });
 
-function clickHandle(type,options){
-    
+function ShareClickHandle(type,options){
     let url='';   
     if(type=='qq'){
-        url='https://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&source={source}';
+        url="https://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&summary={summary}";
         generate(url,options);
     }
     else if(type=='qzone'){

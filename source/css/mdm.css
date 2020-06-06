@@ -212,3 +212,11 @@ article p{
   width: 30%;
   max-width: 300px;
 }
+
+/*捐助*/
+.reward-title{
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  font-size: 1.5em;
+}

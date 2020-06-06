@@ -3,7 +3,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
     <meta name="baidu-site-verification" content="5EmnBCPDrY" />
-    <title><%= config.title %></title>
+    <%
+    var title = page.title;
+  
+    if (is_archive()){
+      title = __('archive_a');
+  
+      if (is_month()){
+        title += ': ' + page.year + '/' + page.month;
+      } else if (is_year()){
+        title += ': ' + page.year;
+      }
+    } else if (is_category()){
+      title = __('category') + ': ' + page.category;
+    } else if (is_tag()){
+      title = __('tag') + ': ' + page.tag;
+    }
+    %>
+    <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
     <!--一言-->
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <!--mdui-->
@@ -21,6 +38,10 @@
     <!--全局变灰-->
     <% if(theme.SEO.GreyMode == true) { %>
         <%- css('css/grey.css')%>
+    <% } %>
+
+    <% if(theme.ClickEffect.enable){%>
+    <%- js('js/click-effect.js') %>
     <% } %>
 
     <!--本地搜索-->

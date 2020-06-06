@@ -1,20 +1,27 @@
 # HeaderBar 菜单
-menu:
-  Home: /
-  Tags: /tags
-  Archives: /archives
-  Video: /video
-  About: /about
-
-# 图标
 # 图标只在小屏时候显示
 # 查找图标访问：（https://www.mdui.org/docs/material_icon）
-Icon:
-  Home: home
-  Tags: local_offer
-  Archives: library_books
-  Video: videocam
-  About: error_outline
+menu:
+  Home:
+    url: /
+    icon: home
+    text: 首页
+  Tags: 
+    url: /tags
+    icon: local_offer
+    text: 标签
+  Archives: 
+    url: /archives
+    icon: library_books
+    text: 归档
+  Video: 
+    url: /video
+    icon: videocam
+    text: 视频
+  About: 
+    url: /about
+    icon: error_outline
+    text: 关于
 
 # 评论(Valine)
 #  show_talk: 是否开启评论
@@ -43,14 +50,15 @@ toc: false
 
 # 打赏
 reward:
-  enable: false
-  alipay-img: 
-  wechat-img:
+  enable: true
+  title: 写博客不易，请我喝杯咖啡？
+  alipay: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/alipay.jpg
+  wechat: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg
 
 # 分享
 # 可选有 qq,qzone,wechat,douban,facebook,twitter,google
 share:
-  enable: true
+  QQ: 
 
 
 # 自动提交百度搜索引擎
@@ -65,6 +73,10 @@ SEO:
   BaiduAutoPush: true
   GoogleAd: true
   GreyMode: false
+
+# 点击小心心特效
+ClickEffect:
+  enable: true
 
 # 站点地图
 sitemap:

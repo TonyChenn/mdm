@@ -1,0 +1,26 @@
+<% if(theme.reward.enable){ %>
+    <div class="mdui-container">
+        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
+            mdui-dialog="{target: '#reward-dialog'}">赏</button>
+        <div class="mdui-dialog" id="reward-dialog">
+            <div class="reward-title"><%= theme.reward.title %> </div>
+            <div class="mdui-divider"></div>
+            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
+                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
+                <a href="#reward-wechat" class="mdui-ripple">微信</a>
+            </div>
+            <div id="reward-alipay">
+                <img src="<%=theme.reward.alipay%>" class="mdui-center noclick">
+            </div>
+            <div id="reward-wechat">
+                <img src="<%=theme.reward.wechat%>" class="mdui-center noclick">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tab = new mdui.Tab('#reward-tab');
+        mdui.JQ('#reward-dialog').on('open.mdui.dialog', function () {
+        tab.handleUpdate();
+        });
+    </script>
+<% } %>

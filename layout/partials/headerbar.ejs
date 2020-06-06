@@ -6,9 +6,9 @@
         <ul class="mdui-menu" id="example-2">
         <% Object.keys(theme.menu).forEach(key => { %>
             <li class="mdui-menu-item">
-            <a href="<%=theme.menu[key]%>" class="mdui-ripple">
-                    <i class="mdui-menu-item-icon mdui-icon material-icons"><%= theme.Icon[key]%></i>
-                <%=key%>
+            <a href="<%=theme.menu[key].url%>" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons"><%= theme.menu[key].icon%></i>
+                <%= theme.menu[key].text%>
             </a>
             </li>
             <li class="mdui-divider"></li>
@@ -16,9 +16,9 @@
         </ul>
         <!--大屏-->
         <% Object.keys(theme.menu).forEach(key => { %>
-        <a href="<%=theme.menu[key]%>"
+        <a href="<%=theme.menu[key].url%>"
             class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
-            <%=key%>
+            <%=theme.menu[key].text%>
         </a>
         <% }); %>
         <div class="mdui-toolbar-spacer"></div>
@@ -36,8 +36,17 @@
                 mdui-tooltip="{content: '切换亮/暗色模式'}">
             <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
         </button>
-        <button onclick="location.reload()" class="mdui-btn mdui-btn-icon mdui-ripple">
-            <i class="mdui-icon material-icons">refresh</i>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
         </button>
+        <ul class="mdui-menu" id="share_menu">
+            <% Object.keys(theme.share).forEach(key => { %>
+                <li class="mdui-menu-item">
+                    <button class="mdui-btn mdui-ripple mdui-btn-block" onclick="">
+                        <%=key%>
+                    </button>
+                </li>
+            <% }); %>
+            </ul>
     </div>
 </div>
