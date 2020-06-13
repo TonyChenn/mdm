@@ -1,21 +1,23 @@
 <div id="post-item" class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
-        <!--文章-->
-        <div class="mdui-card-media">
-            <img class="img_item" src="<%- post.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
-                <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
-                    <div class="mdui-card-primary">
-                        <div class="title_font float_left mdui-card-primary-title"><%- post.title %></div>
-                    </div>
-                </div>
+    <!--图片或视频部分-->
+    <div class="mdui-card-media">
+        <img class="img_item mdui-img-fluid" src="<%- item.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
+        <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+            <div class="mdui-card-primary">
+                <div class="title_font float_left mdui-card-primary-title"><%- item.title %></div>
+            </div>
         </div>
-        <!--描述-->
-        <% if(post.description){ %>
-            <p id="summary"><%- post.description %></p>
-            <div class="mdui-divider"></div>
-        <%}%>
-        <span class="info" style="float: left; margin-left: 2%;">
-            <i class="mdui-icon material-icons">access_time</i>
-            <%- post.date.format("YYYY-MM-DD") %>
-        </span>
-        <a class="info mdui-text-color-pink" href="<%- url_for(post.path) %>" style="float:right; margin-right: 2%;">去围观</a>
     </div>
+    <!--描述-->
+    <div class="mdui-card-actions">
+      <% if(item.description){ %>
+        <p id="summary" style="text-align:left;"><%- item.description %></p>
+      <%}%>
+      <div class="mdui-divider"/>
+        <span class="info">
+          <i class="mdui-icon material-icons">access_time</i>
+          <%- item.date.format("YYYY-MM-DD") %>
+        </span>
+        <a class="info mdui-text-color-pink " href="<%- url_for(item.path) %>" style="float:right;">去围观</a>
+    </div>
+  </div>
