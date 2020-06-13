@@ -1,222 +1,297 @@
-a{
-  color: #F44336;
+a {
+    color: #F44336;
 }
-h1, h2,h3{
-  color: #3F51B5;
+
+h1,
+h2,
+h3 {
+    color: #3F51B5;
 }
+
+
 /*重写覆盖MDUI中的字体大小*/
-h1{
-  font-size: 1.5em;
-  display: block;
+
+h1 {
+    font-size: 1.5em;
+    display: block;
 }
-h2{
-  font-size: 1.3em;
+
+h2 {
+    font-size: 1.3em;
 }
-h3{
-  font-size: 1.1em;
+
+h3 {
+    font-size: 1.1em;
 }
-h4, h5, h6{
-  font-size: 1em;
+
+h4,
+h5,
+h6 {
+    font-size: 1em;
 }
+
 
 /*背景*/
-body{
-  background: #f5f5f5;
+
+body {
+    background: #f5f5f5;
 }
+
+
 /*bar*/
-.mdui-color-indigo{
-  background-color: #3F51B5;
+
+.mdui-color-indigo {
+    background-color: #3F51B5;
 }
+
+
 /*summary*/
-#summary{
-  color: #424242;
+
+#summary {
+    color: #424242;
 }
+
+
 /*标题*/
-.title_font{
-  font-size: 1.3em;
-  color: #f5f5f5;
+
+.title_font {
+    font-size: 1.3em;
+    color: #f5f5f5;
 }
-#post-item{
-  margin-bottom: 20pt;
-  background-color: #fff;
-  border-radius: 15px;
+
+#post-item {
+    margin-bottom: 20pt;
+    background-color: #fff;
+    border-radius: 15px;
 }
-.info{
-  float: left;
-  margin-top: 10px;
-  margin-left: 5px;
-  font-size: 1em;
-  color: rgba(0,0,0,0.54);
+
+.info {
+    float: left;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.fixPosition {
+    position: fixed;
+}
+
+#recent-posts {
+    scroll-padding-bottom: 5px;
+    width: 95%;
+    max-width: 550pt;
+    text-align: center;
+}
+
+#bar {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
 }
 
 
-.fixPosition{
-  position: fixed;
-}
-
-#recent-posts{
-  scroll-padding-bottom:5px;
-  width:95%;max-width:550pt;
-  text-align:center;
-}
-
-#bar{
-  position: fixed;
-  width: 100%;
-  z-index: 4;
-}
 /*一言*/
-#hitokoto{
-  font-size: 1em;
-  color: #ddd;
+
+#hitokoto {
+    font-size: 1em;
+    color: #ddd;
 }
+
+
 /*页码*/
-#paginator{
-  font-size: 1.6em;
-  text-align: center;
+
+#paginator {
+    font-size: 1.6em;
+    text-align: center;
 }
-#paginator a{
-  padding-right: 10px;
-  padding-left: 10px;
+
+#paginator a {
+    padding-right: 10px;
+    padding-left: 10px;
 }
-#paginator .space{
-  padding-right: 10px;
-  padding-left: 10px;
+
+#paginator .space {
+    padding-right: 10px;
+    padding-left: 10px;
 }
-#paginator .current{
-  padding-right: 10px;
-  padding-left: 10px;
-  background: #ccc;
-  border-radius: 5px;
+
+#paginator .current {
+    padding-right: 10px;
+    padding-left: 10px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.goTop {
+    display: none;
+}
+
+.header-box {
+    width: 100%;
+    max-height: 600px;
+    position: relative;
+}
+
+.half-header-box {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.header_title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #f5f5f5;
 }
 
 
-.goTop{
-  display: none;
-}
-.header-box{
-width: 100%; max-height: 600px; position: relative;
-}
-.half-header-box{
-  width: 100%; height: 400px; position: relative;
-}
-.header-content{
-  position:absolute; top:50%; width: 100%; text-align: center;
-}
-.header_title{
-  text-align: center;
-  font-size: 1.8em;
-  color: #f5f5f5;
-}
 /*高斯模糊*/
+
 .blur {
-  -webkit-filter: blur(10px);
-     -moz-filter: blur(10px);
-      -ms-filter: blur(10px);    
-          filter: blur(10px);   
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
 }
-.post-content{
-  padding: 25px 20px 25px 20px;
-  margin-bottom: 24px;
-  position: relative;
+
+.post-content {
+    padding: 25px 20px 25px 20px;
+    margin-bottom: 24px;
+    position: relative;
 }
+
+
 /*修复连接超出边界*/
-.post-content a{
-  word-wrap: break-word;
+
+.post-content a {
+    word-wrap: break-word;
 }
+
 .fixed-bottom {
-  position: fixed;bottom: 0;width:100%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-._tag{
-  color: aquamarine;
-  font-size: 2.45em;
+
+._tag {
+    color: aquamarine;
+    font-size: 2.45em;
 }
+
+
 /*博客条目图片*/
-.img_item{
-  width:100%;
-  height: 56%;
-  max-width: 800px;
-  max-height: 450px;
+
+.img_item {
+    width: 100%;
+    height: 56%;
+    max-width: 800px;
+    max-height: 450px;
 }
-.float_left{
-  float: left;
+
+.float_left {
+    float: left;
 }
-.content_font{
-  font-size: 1em;
-  color: #37474f;
+
+.content_font {
+    font-size: 1em;
+    color: #37474f;
 }
-.post_tag{
-  padding: 20px;
-  border-radius: 5px;
-  background-color: white;
-  margin-bottom: 20px;
+
+.post_tag {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 20px;
 }
-.mdui-panel-item{
-  background-color: white;
+
+.mdui-panel-item {
+    background-color: white;
 }
-.mdui-panel-item-title{
-  color: black;
+
+.mdui-panel-item-title {
+    color: black;
 }
+
 .mdui-panel-item-body .post-time,
-.mdui-panel-item-header .mdui-panel-item-summary{
-  color: #9E9E9E;
+.mdui-panel-item-header .mdui-panel-item-summary {
+    color: #9E9E9E;
 }
 
 
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
-::-webkit-scrollbar  
-{  
-    width: 5px; 
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+    width: 5px;
     height: 10px;
-}  
-/*定义滚动条轨道 内阴影+圆角*/  
-::-webkit-scrollbar-track  
-{  
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
     /*滚动条的背景区域的内阴影*/
-    box-shadow:0px 1px 3px rgba(0,0,0,0.3) inset;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) inset;
     border-radius: 10px;
     background-color: #ddd;
-}  
-/*定义滑块 内阴影+圆角*/  
-::-webkit-scrollbar-thumb  
-{  
-    /*滚动条的内阴影*/
-    box-shadow:0px 1px 3px rgba(0,0,0,0.3) inset;
-    border-radius: 10px;  
-    background-color: #aaa;  
 }
 
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    /*滚动条的内阴影*/
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3) inset;
+    border-radius: 10px;
+    background-color: #aaa;
+}
+
+
 /*Archive*/
-.mdui-panel .mdui-panel-item .mdui-panel-item-header{
-  font-size: 1.2em;
+
+.mdui-panel .mdui-panel-item .mdui-panel-item-header {
+    font-size: 1.2em;
 }
-.mdui-panel-item-body div{
-  font-size: 1em;
+
+.mdui-panel-item-body div {
+    font-size: 1em;
 }
+
 
 /* md文本的样式
 */
 
+
 /*图片*/
-img{
-  max-width: 100%;
-  height: auto;
-  display: block;
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
+article p {
+    font-size: 17px;
+}
 
-article p{
-  font-size: 17px;
+#sidebar {
+    width: 30%;
+    max-width: 300px;
 }
-#sidebar{
-  width: 30%;
-  max-width: 300px;
-}
+
 
 /*捐助*/
-.reward-title{
-  text-align: center; 
-  margin-top: 20px; 
-  margin-bottom: 20px; 
-  font-size: 1.5em;
+
+.reward-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
 }

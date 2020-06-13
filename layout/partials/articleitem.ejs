@@ -1,23 +1,29 @@
 <div id="post-item" class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
-    <!--图片或视频部分-->
     <div class="mdui-card-media">
         <img class="img_item mdui-img-fluid" src="<%- item.img %>" onerror="{this.src='<%=theme.no_img%>'}" draggable="false">
         <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
             <div class="mdui-card-primary">
-                <div class="title_font float_left mdui-card-primary-title"><%- item.title %></div>
+                <div class="title_font float_left mdui-card-primary-title">
+                    <%- item.title %>
+                </div>
             </div>
         </div>
     </div>
-    <!--描述-->
     <div class="mdui-card-actions">
-      <% if(item.description){ %>
-        <p id="summary" style="text-align:left;"><%- item.description %></p>
-      <%}%>
-      <div class="mdui-divider"/>
+        <% if(item.description){ %>
+            <p id="summary" style="text-align:left;">
+                <%- item.description %>
+            </p>
+        <%}%>
+        <div class="mdui-divider"></div>
         <span class="info">
-          <i class="mdui-icon material-icons">access_time</i>
-          <%- item.date.format("YYYY-MM-DD") %>
-        </span>
+        <i class="mdui-icon material-icons">&#xe923;</i>
+        <% if(post.update){ %>
+            <%- item.update.format("YYYY-MM-DD") %>
+        <% }else{%>
+            <%- item.date.format("YYYY-MM-DD") %>
+        <% } %>
+    </span>
         <a class="info mdui-text-color-pink " href="<%- url_for(item.path) %>" style="float:right;">去围观</a>
     </div>
-  </div>
+</div>

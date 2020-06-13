@@ -1,17 +1,19 @@
 <div id="post-item" class="mdui-shadow-1 mdui-center mdui-ripple mdui-hoverable">
-    <!--图片或视频部分-->
     <div class="mdui-card-media">
         <video class="mdui-video-fluid" style="max-height: 450px;" controls>
             <source src="<%- item.video %>" type="video/mp4" >
         </video>
     </div>
-    <!--描述-->
     <div class="mdui-card-actions">
         <p id="summary" class="mdui-text-color-black-icon" style="text-align:center; font-weight:100;"><%- item.content %></p>
-        <div class="mdui-divider"/>
+        <div class="mdui-divider"></div>
         <span class="info">
-          <i class="mdui-icon material-icons">access_time</i>
-          <%- item.date.format("YYYY-MM-DD") %>
+            <i class="mdui-icon material-icons">&#xe923;</i>
+            <% if(post.update){ %>
+                <%- item.update.format("YYYY-MM-DD") %>
+            <% }else{%>
+                <%- item.date.format("YYYY-MM-DD") %>
+            <% } %>
         </span>
     </div>
-  </div>
+</div>
