@@ -9,11 +9,7 @@
         <div class="mdui-divider"></div>
         <span class="info">
             <i class="mdui-icon material-icons">&#xe923;</i>
-            <% if(post.update){ %>
-                <%- item.update.format("YYYY-MM-DD") %>
-            <% }else{%>
-                <%- item.date.format("YYYY-MM-DD") %>
-            <% } %>
+            <%- item.date.format("YYYY-MM-DD") %>
         </span>
     </div>
 </div>
