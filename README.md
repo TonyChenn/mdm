@@ -128,6 +128,41 @@ markdown:
     permalinkClass: header-anchor
     permalinkSymbol: ¶
 ```
+## 文章置顶及自定义排序
+请到Hexo项目下的<kbd>\node_modules\hexo-generator-index\lib\generator.js</kbd>找到该文件并打开。(js代码简单，不过多介绍，有需要修改的自行修改) 替换为如下内容：
+```js
+'use strict';
+
+var pagination = require('hexo-pagination');
+module.exports = function(locals) {
+
+  var config = this.config;
+  var posts = locals.posts;
+  var paginationDir = config.pagination_dir || 'page';
+
+  posts.data = posts.data.sort(function(a, b) {
+      var a_time = (a.update_time && a.update_time>a.date) ? a.update_time : a.date;
+      var b_time = (b.update_time && b.update_time>b.date) ? b.update_time : b.date;
+      
+      if(a.top && b.top)  return a.top == b.top ? b_time-a_time: b.top-a.top;
+
+      else if(a.top)  return -1;
+      else if(b.top)  return 1;
+
+      else return b_time - a_time;
+  });
+
+
+  return pagination('', posts, {
+    perPage: config.index_generator.per_page,
+    layout: ['index', 'archive'],
+    format: paginationDir + '/%d/',
+    data: {
+      __index: true
+    }
+  });
+};
+```
 
 # 下载
 Github: https://github.com/TonyChenn/hexo-theme-mdm
