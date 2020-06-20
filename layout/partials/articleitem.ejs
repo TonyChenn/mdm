@@ -22,6 +22,10 @@
         <span class="info">
         <i class="mdui-icon material-icons">&#xe923;</i>
         <%- item.date.format("YYYY-MM-DD") %>
+        <% if(item.updatetime){ %>
+            <i class="mdui-icon material-icons">&#xe3c9;</i>
+            <%- date(item.updatetime) %>
+        <%}%>
     </span>
         <a class="info mdui-text-color-pink " href="<%- url_for(item.path) %>" style="float:right;">去围观</a>
     </div>

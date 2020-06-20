@@ -3,7 +3,7 @@
 </div>
 <% if (page.posts.length > 0) { %>
 <div id="recent-posts" class="mdui-center">
-  <% page.posts.sort('date', -1).limit(10).each(post => { %>
+  <% page.posts.limit(10).each(post => { %>
     <% if(post.video){ %>
       <%-partial('partials/videoitem', {item:post})%>
     <% }else{ %>

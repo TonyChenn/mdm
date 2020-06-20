@@ -8,6 +8,10 @@
 2. [CSDN博文导出工具](https://github.com/TonyChenn/BlogExportTool)
 
 # 更新介绍：
+- 2020-6-20
+1. 文章置顶
+2. 显示更新日期
+
 - 2020-5-27：
 1. PWA支持
 2. 点击特效
