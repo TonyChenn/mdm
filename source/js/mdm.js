@@ -27,10 +27,6 @@ window.onload=function(){
     //只改变表格样式，不改变代码的样式
     $$('table thead').parent('table').addClass("mdui-table mdui-table-hoverable")
 
-    $$('.mdui-table').each(function(i,element){
-        const node=element.parentNode.before("<div class='mdui-table-fluid'>123</div>");
-        element.parentNode=node;
-    })
     $('.mdui-table').wrap("<div class='mdui-table-fluid'></div>");
 
     //代碼塊
@@ -160,66 +156,3 @@ function imgShow(outerDiv, innerDiv, bigImg, _this,src) {
 setTimeout(function () {
     createImgPrevious();
 }, 1000)
-
-
-
-//share
-const InitShare = (function(){
-    let shareItems=document.querySelectorAll('.share-item');
-    if(!shareItems || shareItems.length==0) return;
-    let curPageUrl=window.location.href;
-    let curTitle=document.querySelector('title').innerHTML;
-    let curImg= document.querySelector('header div img');
-    let picUrl=curImg.length ? curImg.getAttribute('src'):'';
-    if(picUrl=='')
-        picUrl='{{ theme.no_img }}';
-    
-        // clickHandle(type,{
-        //     url: curPageUrl,
-        //     pic: picUrl,
-        //     title: curTitle,
-        //     source: curTitle
-        // })
-});
-
-function ShareClickHandle(type,options){
-    let url='';   
-    if(type=='qq'){
-        url="https://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&summary={summary}";
-        generate(url,options);
-    }
-    else if(type=='qzone'){
-        url='https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}';
-        
-        //url='https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&sharesource=qzone&title={title}&pics={pic}&summary={summary}';
-        generate(type,options);
-    }
-    else if(type=='wechat'){
-        return;
-    }
-    else if(type=='douban'){
-        url='https://www.douban.com/share/service?image={pic}&href={url}&name={title}&text={title}';
-        generate(url,options);
-    }
-    else if(type=='facebook'){
-        url='https://www.facebook.com/sharer/sharer.php?u={url}';
-        generate(url,options);
-    }
-    else if(type=='twitter'){
-        url='https://twitter.com/intent/tweet?text={title}&url={url}&via=<%-config.url%>';
-        generate(url,options);
-    }
-    else if(type=='google'){
-        url='https://plus.google.com/share?url={url}';
-        generate(url,options);
-    }
-}
-function generate(url,options){
-    var _url=url.replace('{url}',options.url)
-           .replace('{title}',options.title)
-           .replace('{source}',options.source)
-           .replace('{summary}',options.title)
-           .replace('{pic}',options.pic);
-    console.log(options.url+' '+options.pic+' '+options.title);
-    window.open(_url);
-}

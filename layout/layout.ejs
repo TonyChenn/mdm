@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
 <!--Head-->
-<%- fragment_cache('head', function(){
-  return partial('partials/head');
-}) %>
+<%- partial('partials/head') %>
 <!--header_bar-->
 <%- fragment_cache('headerbar', function(){
   return partial('partials/headerbar');

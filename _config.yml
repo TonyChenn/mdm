@@ -15,9 +15,9 @@ menu:
     icon: library_books
     text: 归档
   Video: 
-    url: /video
+    url: /collection
     icon: videocam
-    text: 视频
+    text: 作品集
   About: 
     url: /about
     icon: error_outline
@@ -58,7 +58,14 @@ reward:
 # 分享
 # 可选有 qq,qzone,wechat,douban,facebook,twitter,google
 share:
-  QQ: 
+  enable: true
+  facebook: true
+  qq: true
+  twitter: true
+  weibo: true
+  telegram: true
+  googleplus: true
+  linkedin: true
 
 
 # 自动提交百度搜索引擎
@@ -83,6 +90,8 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+favicon: /favicon.ico
 
 # 首页顶部图片地址
 index_header_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg

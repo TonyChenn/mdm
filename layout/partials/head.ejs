@@ -4,23 +4,32 @@
     <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
     <meta name="baidu-site-verification" content="5EmnBCPDrY" />
     <%
-    var title = page.title;
-  
-    if (is_archive()){
-      title = __('archive_a');
-  
-      if (is_month()){
-        title += ': ' + page.year + '/' + page.month;
-      } else if (is_year()){
-        title += ': ' + page.year;
-      }
-    } else if (is_category()){
-      title = __('category') + ': ' + page.category;
-    } else if (is_tag()){
-      title = __('tag') + ': ' + page.tag;
-    }
+    var page_title = page.title || '';
+    if (is_home()) page_title = __('global.home');
+    if (is_archive()) page_title = __('global.archives');
+    if (is_tag()) page_title = __('global.tags') + ': ' + page.tag;
+    if (page.path === 'about/') page_title = __('global.about');
+    page_title += ' - ' + config.title;
     %>
-    <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+
+    <title><%= page_title %></title>
+
+    <meta property="og:url" content="<%= config.url %>">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="<% if (page_title) { %><%= page_title %> | <% } %><%= config.title %>">
+    
+    <% if(page.img) { %>
+        <meta property="og:image" content="<%= page.img %>">
+    <% } else if (config.description){ %>
+        <meta property="og:image" content="<%= theme.no_img %>">
+    <% } %>
+
+    <% if(page.description) { %>
+      <meta property="og:description" content="<%= page.description %>">
+    <% } else if (config.description){ %>
+      <meta property="og:description" content="<%= config.description %>">
+    <% } %>
+
     <!--一言-->
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <!--mdui-->

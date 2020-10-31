@@ -39,14 +39,66 @@
         <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
             <i class="mdui-icon material-icons">share</i>
         </button>
+        <!--分享-->
+        <% if(theme.share.enable){ %>
         <ul class="mdui-menu" id="share_menu">
-            <% Object.keys(theme.share).forEach(key => { %>
+            <% if(theme.share.facebook === true) { %>
                 <li class="mdui-menu-item">
-                    <button class="mdui-btn mdui-ripple mdui-btn-block" onclick="">
-                        <%=key%>
-                    </button>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<%= config.url + config.root + url_for(path) %>" target="_blank" class="mdui-ripple">
+                        facebook
+                    </a>
                 </li>
-            <% }); %>
+            <% } %>
+            
+            <% if(theme.share.qq === true) { %>
+                <li class="mdui-menu-item">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%= config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + theme.favicon %>&url=<%- config.url +  url_for(path) %>" target="_blank" class="mdui-ripple">
+                        QQ
+                    </a>
+                </li>
+            <% } %>
+
+            <% if(theme.share.twitter === true) { %>
+                <li class="mdui-menu-item">
+                    <a href="https://twitter.com/intent/tweet?text=<%= page.title %>&url=<%= config.url + config.root + url_for(path) %>&via=<%= config.author %>" target="_blank" class="mdui-ripple">
+                        twitter
+                    </a>
+                </li>
+            <% } %>
+        
+            <% if(theme.share.weibo === true) { %>
+                <li class="mdui-menu-item">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=<%= page.title %>&url=<%= config.url + config.root + url_for(path) %>&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                        weibo
+                    </a>
+                </li>
+            <% } %>
+
+            <% if(theme.share.telegram === true) { %>
+                <li class="mdui-menu-item">
+                    <a href="https://telegram.me/share/url?url=<%- config.url + config.root + url_for(path) %>&text=<%= page.title %>" target="_blank" class="mdui-ripple">
+                        telegram
+                    </a>
+                </li>
+            <% } %>
+
+            <% if(theme.share.googleplus === true) { %>
+                <li class="mdui-menu-item">
+                    <a href="https://plus.google.com/share?url=<%= config.url + config.root + url_for(path) %>" target="_blank" class="mdui-ripple">
+                        googleplus
+                    </a>
+                </li>
+              <% } %>
+        
+              <% if(theme.share.linkedin === true) { %>
+                <li class="mdui-menu-item">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%- config.url + config.root + url_for(path) %>&title=<%= page.title %>" target="_blank" class="mdui-ripple">
+                        linkedin
+                    </a>
+                </li>
+              <% } %>
+
             </ul>
+        <%}%>
     </div>
 </div>
