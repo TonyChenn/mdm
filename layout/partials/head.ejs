@@ -44,6 +44,10 @@
     </script>
     <!--jquery-->
     <%- js('https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js') %>
+
+    <!--https://github.com/Dreamer365/FunLazy-->
+    <script src="https://cdn.jsdelivr.net/npm/funlazy@latest"></script>
+
     <!--theme-->
     <%- css('css/mdm.css')%>
     <%- css('css/mdm_theme_dark.css')%>
@@ -55,10 +59,15 @@
     <% if(theme.SEO.GreyMode == true) { %>
         <%- css('css/grey.css')%>
     <% } %>
-
+    <!--点击特效-->
     <% if(theme.ClickEffect.enable){%>
     <%- js('js/click-effect.js') %>
     <% } %>
+
+    <!--代码块-->
+    <%- js('libs/codeblock/codeblock.js')%>
+    <%- css('libs/codeblock/codeblock.css')%>
+
 
     <!--本地搜索-->
     <!-- <script src="js/search.js"></script> -->

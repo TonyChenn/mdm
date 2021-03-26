@@ -1,46 +1,35 @@
-<div class="mdui-appbar mdui-shadow-0" id="bar">
-    <div class="mdui-toolbar mdui-text-color-white">
+<div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
+    <div class="mdui-toolbar mdui-color-indigo">  
         <a class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#example-2'}">
             <i class="mdui-icon material-icons">menu</i>
         </a>
         <ul class="mdui-menu" id="example-2">
-        <% Object.keys(theme.menu).forEach(key => { %>
-            <li class="mdui-menu-item">
-            <a href="<%=theme.menu[key].url%>" class="mdui-ripple">
-                <i class="mdui-menu-item-icon mdui-icon material-icons"><%= theme.menu[key].icon%></i>
-                <%= theme.menu[key].text%>
-            </a>
-            </li>
-            <li class="mdui-divider"></li>
-        <% }); %>
+            <% Object.keys(theme.menu).forEach(key => { %>
+                <li class="mdui-menu-item">
+                <a href="<%=theme.menu[key].url%>" class="mdui-ripple">
+                    <i class="mdui-menu-item-icon mdui-icon material-icons"><%= theme.menu[key].icon%></i>
+                    <%= theme.menu[key].text%>
+                </a>
+                </li>
+                <li class="mdui-divider"></li>
+            <% }); %>
         </ul>
         <!--大屏-->
         <% Object.keys(theme.menu).forEach(key => { %>
-        <a href="<%=theme.menu[key].url%>"
-            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
-            <%=theme.menu[key].text%>
-        </a>
+            <a href="<%=theme.menu[key].url%>" class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+                <%=theme.menu[key].text%>
+            </a>
         <% }); %>
         <div class="mdui-toolbar-spacer"></div>
-        <!--
-        <div class="mdui-textfield mdui-textfield-expandable" style="max-width:500px;margin-right: -10px;">
-            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
-                <i class="mdui-icon material-icons">search</i>
-            </button>
-            <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
-            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
-        </div>-->
 
-        <button onclick="themeChange()"
-                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
-                mdui-tooltip="{content: '切换亮/暗色模式'}">
-            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
-            <i class="mdui-icon material-icons">share</i>
-        </button>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
+
         <!--分享-->
         <% if(theme.share.enable){ %>
+        <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
+        </button>
+        
         <ul class="mdui-menu" id="share_menu">
             <% if(theme.share.facebook === true) { %>
                 <li class="mdui-menu-item">
@@ -97,8 +86,14 @@
                     </a>
                 </li>
               <% } %>
-
             </ul>
         <%}%>
+        
+        <button onclick="themeChange()"
+            class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+            mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
+        </button>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
     </div>
-</div>
+  </div>

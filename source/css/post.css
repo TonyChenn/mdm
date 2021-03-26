@@ -22,18 +22,3 @@ ol li,
 p{
   line-height: 1.8;
 }
-
-/* 代码背景 */
-figure{
-  overflow: auto;
-  border-style: solid;
-  border-radius: 10px 10px 10px 10px;
-  border-color: rgba(0, 0, 0, 0.12);
-  border-width: 1px;
-  padding: 12px 16px 12px 16px;
-  line-height: 1.8;
-}
-
-figure table tbody{
-  table-layout: inherit;
-}

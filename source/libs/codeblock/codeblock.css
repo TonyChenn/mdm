@@ -1,0 +1,54 @@
+.highlight-wrap {
+    background: #2d2d2d;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
+    padding-top: 30px;
+    position: relative;
+}
+.highlight-wrap::before{
+    background: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    content: ' ';
+    height: 12px;
+    left: 12px;
+    margin-top: -20px;
+    position: absolute;
+    width: 12px;
+}
+
+figure{
+    margin-block-start: 0px;
+    overflow: auto;
+    line-height: 1.8;
+}
+
+.code_menu_item{
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+}
+.code_copy{
+    right: 40px;
+}
+.code_expand{
+    right: 10px;
+}
+
+figure .gutter{
+    user-select: none;
+    padding-right: 20px;
+}
+
+figure .gutter .line{
+    color: #989aa7;
+}
+
+
+/*代碼背景 
+.mdm_theme_dark .highlight-wrap{
+    background-color: #4e4e4e;
+  }
+  .mdm_theme_dark .highlight-wrap .comment{
+      color: rgb(106, 153, 85);
+  }*/

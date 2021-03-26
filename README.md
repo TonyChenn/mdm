@@ -8,6 +8,13 @@
 2. [CSDN博文导出工具](https://github.com/TonyChenn/BlogExportTool)
 
 # 更新介绍：
+- 2021.3.25
+1. 更新mdui到1.0.1并修复 日/夜间模式，一键置顶
+2. 美化 headerbar,文章详情部分
+3. 支持图片LazyLoad
+4. 界面布局优化
+5. 美化代码框
+
 - 2020.11.12
 1. 解决在IOS设备Safari浏览器上布局错乱问题
 

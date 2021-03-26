@@ -1,6 +1,8 @@
 # HeaderBar 菜单
 # 图标只在小屏时候显示
 # 查找图标访问：（https://www.mdui.org/docs/material_icon）
+# 当上面图标无法满足需求时，可以到iconfont下载svg代码：(https://www.iconfont.cn/)，只粘贴path标签即可
+# SubItem支持
 menu:
   Home:
     url: /
@@ -13,7 +15,7 @@ menu:
   Archives: 
     url: /archives
     icon: library_books
-    text: 归档
+    text: 归档  
   Video: 
     url: /collection
     icon: videocam
@@ -24,14 +26,15 @@ menu:
     text: 关于
 
 # 评论(Valine)
-#  show_talk: 是否开启评论
+#  enable: 是否开启评论
 #  app_id: 你的 app_id
 #  app_key: 你的 app_key
 #  avatar: 头像         '',  'mp',  'identicon',  'monsterid',  'wavatar', 'retro', 'robohash', 'hide'
 #  评论提醒,验证码: 默认关闭，在post.ejs文件内
 #  更多配置查看官网(https://valine.js.org/)  
 Valine:
-  show_talk: false
+  enable: false
+
   app_id: Jng2NUkg6zUYlLxMxl4S91kW-gzGzoHsz
   app_key: NKjBMKVPJv3CggFYFSUkUAvR
   avatar: retro

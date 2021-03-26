@@ -1,23 +1,31 @@
-<header>
+<% 
+    var bg = theme.index_header_img;
+    var title = page.title;
+    if(is_post()){
+        bg = page.img;
+        title = page.title;
+    }
+    else if(is_current('/tags')){
+        title = __('global.tags');
+    }
+    else if(is_current('/about')){
+        title=__('global.about')
+    }
+    else if(is_archive()){
+        title = __('global.archives');
+    }
+    else{
+        title = config.title;
+    }
+
+    if(bg){}else{bg=theme.no_img;}
+%>
+
+<div class="header" style="background-image: url(<%= bg %>)">
     <div class="mdui-card-media" style="overflow: hidden;">
-        <% if(is_post()){ %>
-        <img src="<%= page.img %>" class="header-box blur mdui-img-fluid" onerror="{this.src='<%=theme.default_error_img%>'}" draggable="false">
-        <%} else if(is_tag() || is_month()){%>
-        <img class="half-header-box mdui-img-fluid" draggable="false">
-        <% }else{ %>
-        <img src="<%=theme.index_header_img%>" class="header-box mdui-img-fluid" draggable="false">
-        <% } %>
-            <div class="header-content">
-                <% if(is_post() || is_month()){ %>
-                <span class="header_title"><%=page.title%></span></br>
-                <% }else if(is_tag()){ %>
-                <span class="header_title"><%=page.tag%></span></br>
-                <!--TODO-->
-                <%  }else{ %>
-                <span class="header_title"><%=config.title%></span></br>
-                <% } %>
-                <p id="hitokoto">一言加载中...</p>
-            </div>
-        </img>
+        <div class="header-content">
+            <span class="header_title"><%= title %></span></br>
+            <p id="hitokoto">一言加载中...</p>
+        </div>
     </div>
-</header>
+</div>

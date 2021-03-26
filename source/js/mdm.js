@@ -1,18 +1,13 @@
-var $$ = mdui.JQ;
+var $$ = mdui.$;
 
 window.onload=function(){
-    var header_img_width=$$(".header-box").height();
     window.onscroll=function(){
-        if(document.body.scrollTop> header_img_width-50 ||
-            document.documentElement.scrollTop>header_img_width-50){
+        if(document.body.scrollTop> 200 ||
+            document.documentElement.scrollTop>200){
                 $$('.mdui-fab-fixed').removeClass('mdui-fab-hide');
-                $$("#bar").removeClass('mdui-shadow-0');
-                $$("#bar").addClass("mdui-color-indigo");
                 $$('#sidebar').addClass("fixPosition");
         }else{
             $$(".mdui-fab-fixed").addClass('mdui-fab-hide');
-            $$("#bar").addClass("mdui-shadow-0");
-            $$("#bar").removeClass("mdui-color-indigo");
             $$('#sidebar').removeClass("fixPosition");
         }
     }
@@ -22,15 +17,6 @@ window.onload=function(){
         scroll(0,0);
         return false;
     });
-    InitShare();
-
-    //只改变表格样式，不改变代码的样式
-    $$('table thead').parent('table').addClass("mdui-table mdui-table-hoverable")
-
-    $('.mdui-table').wrap("<div class='mdui-table-fluid'></div>");
-
-    //代碼塊
-    //$('figure tbody').addClass('mdui-container mdui-typo');
 
     //设置主题
     var da = getCookie('IsDayTime');
@@ -40,18 +26,27 @@ window.onload=function(){
     else if(da=='false'){
         setTheme('false');
     }
+
+    // 图片懒加载
+    FunLazy({
+        strictLazyMode: true,
+        effect:"fadeIn",
+        useErrorImagePlaceholder : "/8.jpg",
+        onError:function(el, img){
+
+        }
+    });
 }
 
 //主题切换
 function themeChange(){
-    var _data=getCookie('IsDayTime');
+    var _data = getCookie('IsDayTime');
     if(_data=='false'){
         setCookie('IsDayTime','true');
         setTheme('true');
     }
     else
     {
-        showOverlay(500);
         setCookie('IsDayTime','false');
         setTheme('false');
     }
@@ -84,13 +79,6 @@ function setTheme(DayTime){
         $$('body').addClass('mdm_theme_dark');
         $$('#themeIcon').text("brightness_4");
     }
-}
-
-function showOverlay(time){
-    mdui.JQ.showOverlay();
-    setTimeout(function () {
-      mdui.JQ.hideOverlay();
-    }, time);
 }
 
 //图片预览
