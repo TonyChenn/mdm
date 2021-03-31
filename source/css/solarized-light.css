@@ -1,14 +1,18 @@
+figure .line{
+  color: rgba(255,255,255,0.54);
+}
+
 
 .comment,
 .quote {
-  color: #93a1a1;
+  color: #1cb456;
 }
 
 /* Solarized Green */
 .keyword,
 .selector-tag,
 .addition {
-  color: #cc99cd;
+  color: #c678dd;
 }
 
 /* Solarized Cyan */
@@ -27,7 +31,7 @@
 .name,
 .selector-id,
 .selector-class {
-  color: #900;
+  color: #c678dd;
 }
 
 /* Solarized Yellow */

@@ -22,3 +22,9 @@ ol li,
 p{
   line-height: 1.8;
 }
+
+code{
+  color: #c7254e;
+  padding: 2px 6px;
+  background-color: #d1d1d1;
+}
