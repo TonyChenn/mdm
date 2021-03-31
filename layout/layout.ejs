@@ -8,15 +8,16 @@
 }) %>
 <!--Header-->
 <%- partial('partials/header',{cache: true})%>
-<body>
-  <div class="mdui-center" id="content-inner" style="width:95%; max-width:700pt;">
-    <%- body %>
-  </div>
+
+<div class="mdui-center article-section" id="content-inner">
+  <%- body %>
+
   <!--footer-->
   <%- fragment_cache('footer', function(){
     return partial('partials/footer');
   }) %>
-</body>
+</div>
+
 <!--goTop-->
 <%- fragment_cache('gotop', function(){
   return partial('partials/gotop');
