@@ -14,11 +14,4 @@ $(function () {
           $(this).parent().addClass('code-closed');
         }
       });
-
-
-    new ClipboardJS('.code_copy',{
-        target:function(trigger){
-            return trigger.nextElementSibling;
-        }
-    })
 });

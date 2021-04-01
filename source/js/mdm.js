@@ -1,19 +1,17 @@
-var $$ = mdui.$;
-
 window.onload=function(){
     window.onscroll=function(){
         if(document.body.scrollTop> 200 ||
             document.documentElement.scrollTop>200){
-                $$('.mdui-fab-fixed').removeClass('mdui-fab-hide');
-                $$('#sidebar').addClass("fixPosition");
+                $('.mdui-fab-fixed').removeClass('mdui-fab-hide');
+                $('#sidebar').addClass("fixPosition");
         }else{
-            $$(".mdui-fab-fixed").addClass('mdui-fab-hide');
-            $$('#sidebar').removeClass("fixPosition");
+            $(".mdui-fab-fixed").addClass('mdui-fab-hide');
+            $('#sidebar').removeClass("fixPosition");
         }
     }
     //返回顶部点击事件
-    $$('.mdui-fab').on('click',function(){
-        $$('.mdui-fab').addClass('mdui-fab-hide');
+    $('.mdui-fab').on('click',function(){
+        $('.mdui-fab').addClass('mdui-fab-hide');
         scroll(0,0);
         return false;
     });
@@ -72,12 +70,12 @@ function getCookie(name){
 //false night
 function setTheme(DayTime){
     if(DayTime=='true'){
-        $$('body').removeClass('mdm_theme_dark');
-        $$('#themeIcon').text("brightness_7");
+        $('body').removeClass('mdm_theme_dark');
+        $('#themeIcon').text("brightness_7");
     }
     else{
-        $$('body').addClass('mdm_theme_dark');
-        $$('#themeIcon').text("brightness_4");
+        $('body').addClass('mdm_theme_dark');
+        $('#themeIcon').text("brightness_4");
     }
 }
 
@@ -94,7 +92,7 @@ function createImgPrevious() {
     function createCover(src,_this) {
         console.log(_this);
         console.log(src);
-        var cover = $$("<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
+        var cover = $("<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
         $("#outerDiv").remove();
         $("body").append(cover);
         imgShow("#outerDiv", "#innerDiv", "#bigImg", _this,src);

@@ -1,13 +1,15 @@
 # HeaderBar 菜单
 # 图标只在小屏时候显示
 # 查找图标访问：（https://www.mdui.org/docs/material_icon）
-# 当上面图标无法满足需求时，可以到iconfont下载svg代码：(https://www.iconfont.cn/)，只粘贴path标签即可
-# SubItem支持
 menu:
   Home:
     url: /
     icon: home
     text: 首页
+  Desktop:
+    url: /home
+    icon: desktop_windows
+    text: 桌面
   Tags: 
     url: /tags
     icon: local_offer
@@ -15,11 +17,7 @@ menu:
   Archives: 
     url: /archives
     icon: library_books
-    text: 归档  
-  Video: 
-    url: /collection
-    icon: videocam
-    text: 作品集
+    text: 归档
   About: 
     url: /about
     icon: error_outline
