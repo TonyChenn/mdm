@@ -4,6 +4,11 @@
 
   <div class="article article-bg mdui-center mdui-shadow-2">
     <div class="article-info">
+      <!--文章内容广告-->
+      <% if(theme.SEO.GoogleAd==true){ %>
+        <%- partial('partials/ad/article.ejs') %>
+      <% } %>
+      
       <%- page.content%>
       <%- partial('partials/reward') %>
     </div>

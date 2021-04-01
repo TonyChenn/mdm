@@ -30,8 +30,6 @@
       <meta property="og:description" content="<%= config.description %>">
     <% } %>
 
-    <!--一言-->
-    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <!--mdui-->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
@@ -55,18 +53,23 @@
     
     <!--高亮-->
     <%- css('css/solarized-light.css')%>
+    
     <!--全局变灰-->
     <% if(theme.SEO.GreyMode == true) { %>
         <%- css('css/grey.css')%>
     <% } %>
+
     <!--点击特效-->
     <% if(theme.ClickEffect.enable){%>
-    <%- js('js/click-effect.js') %>
+        <script async src="js/click-effect.js"></script>
     <% } %>
 
     <!--代码块-->
     <%- js('libs/codeblock/codeblock.js')%>
     <%- css('libs/codeblock/codeblock.css')%>
+
+    <!--一言-->
+    <script defer src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"></script>
 
 
     <!--本地搜索-->

@@ -13,6 +13,12 @@
             <% } %>
         <% }); %>
     </div>
+
+    <% if(theme.SEO.GoogleAd==true){ %>
+        <!--文章内容广告-->
+        <%- partial('partials/ad_item') %>
+      <% } %>
+
     <!-- 标签列表 -->
     <div class="mdui-shadow-2 mdui-panel post_tag_list" mdui-panel="{accordion : true}">
     <% site.tags.map(function(tag){  %>
@@ -23,6 +29,10 @@
                 <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-panel-item-body mdui-typo">
+                <% if(theme.SEO.GoogleAd==true){ %>
+                    <!--内容广告-->
+                    <%- partial('partials/ad/horizontal.ad.ejs') %>
+                  <% } %>
                 <% tag.posts.map(function(post){  %>
                     <span class="mdui-panel-item-summary post-time">
                         <%= post.date.format('MM-DD') %>

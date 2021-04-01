@@ -9,6 +9,7 @@
         years[year].push(post);
     });
 %>
+
  <!--归档列表 -->
 <div class="mdui-center article">
   <div class="mdui-panel" mdui-panel="{accordion : true}">
@@ -20,6 +21,12 @@
               <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
             </div>
             <div class="mdui-panel-item-body mdui-typo">
+              
+              <% if(theme.SEO.GoogleAd==true){ %>
+                <!--内容广告-->
+                <%- partial('partials/ad/horizontal.ad.ejs') %>
+              <% } %>
+
                 <% years[year].map(function(post){  %>
                   <span class="mdui-panel-item-summary post-time">
                     <%= post.date.format('MM-DD') %>
