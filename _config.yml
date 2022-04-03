@@ -89,8 +89,8 @@ ClickEffect:
 # 站点地图
 sitemap:
   path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
+#baidusitemap:
+#  path: baidusitemap.xml
 
 favicon: /favicon.ico
 
