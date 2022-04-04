@@ -32,7 +32,7 @@ h6 {
 
 .header{
     width:100%;
-    height: 600px;
+    height: 33em;
     background-size: cover;
     background-position: center;
     filter: brightness(0.8);
@@ -324,6 +324,10 @@ img {
 #sidebar {
     width: 30%;
     max-width: 300px;
+}
+
+.mdui-typo figure {
+    text-align: left;
 }
 
 

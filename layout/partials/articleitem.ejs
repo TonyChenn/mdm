@@ -19,6 +19,15 @@
             </div>
         </div>
     </div>
+
+    <% if(item.sticky){ %>
+    <div class="mdui-card-menu">
+        <button class="mdui-btn mdui-btn-icon mdui-text-color-white">
+            <i class="mdui-icon material-icons">&#xe25a;</i>
+        </button>
+    </div>
+    <%}%>
+
     <div class="mdui-card-actions">
         <% if(item.description){ %>
             <p id="summary" style="text-align:left;">

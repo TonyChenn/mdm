@@ -34,21 +34,18 @@ figure{
 .code_expand{
     right: 10px;
 }
+.code_language{
+    right: 40px;
+}
 
 figure .gutter{
     user-select: none;
-    padding-right: 20px;
 }
 
 figure .gutter .line{
     color: #989aa7;
 }
 
-
-/*代碼背景 
-.mdm_theme_dark .highlight-wrap{
-    background-color: #4e4e4e;
-  }
-  .mdm_theme_dark .highlight-wrap .comment{
-      color: rgb(106, 153, 85);
-  }*/
+.code_menu_item{
+    color: #989aa7;
+}

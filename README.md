@@ -8,6 +8,13 @@
 2. [CSDN博文导出工具](https://github.com/TonyChenn/BlogExportTool)
 
 # 更新介绍：
+- 2022.4.4
+1. HexoWriteTool 支持win11
+2. 优化博文置顶，显示置顶标识
+3. 支持代码折叠，显示博文中代码语言
+4. header优化
+5. 博文排版优化
+
 - 2021.3.25
 1. 更新mdui到1.0.1并修复 日/夜间模式，一键置顶
 2. 美化 headerbar,文章详情部分
