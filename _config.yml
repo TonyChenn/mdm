@@ -23,6 +23,10 @@ menu:
     icon: error_outline
     text: 关于
 
+CDN:
+  enable: false
+  url: 
+
 # 评论(Valine)
 #  enable: 是否开启评论
 #  app_id: 你的 app_id
