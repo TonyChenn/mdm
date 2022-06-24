@@ -56,7 +56,7 @@
 3. 文章代码排版。
 
 # :art:演示
-[tonychenn.cn](https://tonychenn.cn) 觉得不错，点个Star
+[tonychenn.cn](https://blog.tonychenn.cn) 觉得不错，点个Star
 
 # :pushpin:介绍
 1. 响应式布局，适配移动端和PC端

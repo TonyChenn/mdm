@@ -16,7 +16,7 @@
 .mdm_theme_dark .mdui-panel-item,
 .mdm_theme_dark .post_tag,
 .mdm_theme_dark #post-item{
-    background-color: #303030;
+    background-color: #3b3b3b;
 }
 
 .mdm_theme_dark .mdui-panel-item .mdui-panel-item-title,
@@ -25,13 +25,4 @@
 .mdm_theme_dark .article li,
 .mdm_theme_dark .article p{
   color: rgba(255,255,255,0.54);
-}
-
-
-
-.mdm_theme_dark .article a{
-  color: #F44336;
-}
-.mdm_theme_dark .article h1, h2,h3{
-  color: #009688;
 }

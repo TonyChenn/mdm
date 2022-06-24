@@ -2,14 +2,14 @@
 <div class="">
   <%- css('css/post.css')%>
 
-  <div class="article article-bg mdui-center mdui-shadow-2">
+  <div class="article article-bg mdui-center">
     <div class="article-info">
       <!--文章内容广告-->
       <% if(theme.SEO.GoogleAd==true){ %>
         <%- partial('partials/ad/article.ejs') %>
       <% } %>
       
-      <div class="mdui-typo">
+      <div>
       <%- page.content%>
     </div>
 

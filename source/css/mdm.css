@@ -1,33 +1,37 @@
 a {
-    color: #F44336;
+    color: #555;
+    border-bottom: none;
+    text-decoration: none;
 }
-
-h1,
-h2,
-h3 {
-    color: #3F51B5;
+.article-info a{
+    border-bottom: 1px solid #ccc;
 }
 
 
 /*重写覆盖MDUI中的字体大小*/
 
 h1 {
-    font-size: 1.5em;
+    color: #000;
+    font-size: 34px;
     display: block;
 }
-
 h2 {
-    font-size: 1.3em;
+    color: #222;
+    font-size: 28px;
 }
-
 h3 {
-    font-size: 1.1em;
+    font-size: 24px;
 }
 
 h4,
 h5,
 h6 {
     font-size: 1em;
+}
+
+li{
+    display: list-item;
+    text-align: -webkit-match-parent;
 }
 
 .header{
@@ -43,12 +47,20 @@ h6 {
 }
 
 body{
-    background-color: #ebebeb;
+    background-color: #fff;
+    font-family: Baskerville, "Times New Roman", SimSun, serif;
+    font-size: 22px;
+    line-height: 1.8;
 }
 footer{
     margin-top: 20px;
     width: 100%;
     position: absolute;
+}
+
+code{
+    line-height: 1.8;
+    background-color: rgba(112, 112, 112, 0.178);
 }
 
 
@@ -237,6 +249,7 @@ footer{
 }
 
 .mdui-panel-item-body .post-time,
+.mdui-panel-item-body .post-name,
 .mdui-panel-item-header .mdui-panel-item-summary {
     color: #9E9E9E;
 }
@@ -292,6 +305,8 @@ img {
     height: auto;
     display: block;
     -webkit-user-drag: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .article-section{
@@ -312,9 +327,6 @@ img {
 .article-info{
     padding: 30px;
 }
-.article p {
-    font-size: 17px;
-}
 
 .talk-info{
     margin-top: 15px;
@@ -330,6 +342,9 @@ img {
     text-align: left;
 }
 
+.mdui-panel-item-body .mdui-panel-item-summary{
+    font-size: 20px;
+}
 
 /*捐助*/
 

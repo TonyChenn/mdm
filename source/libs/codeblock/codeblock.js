@@ -8,7 +8,6 @@ $(function () {
     $('figure').each(function(i, node){
       var result = $(node).attr('class').replace("highlight ","").trim()
       if(result == "plaintext") result = ""
-      console.log("002------>"+result)
       $(node).parent().find('.code_language').text(result)
     })
 

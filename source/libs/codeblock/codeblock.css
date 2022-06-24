@@ -21,6 +21,7 @@ figure{
     margin-block-start: 0px;
     overflow: auto;
     line-height: 1.8;
+    font-size: 20px;
 }
 
 .code_menu_item{
