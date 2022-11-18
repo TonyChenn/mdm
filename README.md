@@ -8,6 +8,12 @@
 2. [CSDN博文导出工具](https://github.com/TonyChenn/BlogExportTool)
 
 # 更新介绍：
+- 2022.11.17
+1. 升级HexoBlogWhriteTool
+   - 优化原来的难看的展示页面。
+   - 未开启本地服务则不再拦截关闭事件。
+2. 修复jquery cdn失效
+
 - 2022.4.4
 1. HexoWriteTool 支持win11
 2. 优化博文置顶，显示置顶标识
