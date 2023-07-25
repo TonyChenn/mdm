@@ -2,6 +2,21 @@
     background: #3b3b3b;
 }
 
+.mdm_theme_dark a,
+.mdm_theme_dark h1,
+.mdm_theme_dark h2,
+.mdm_theme_dark h3,
+.mdm_theme_dark h4,
+.mdm_theme_dark h5,
+.mdm_theme_dark h6{
+  color: #ccc;
+}
+
+.mdm_theme_dark code{
+  background-color: #616161
+}
+
+
 .mdm_theme_dark .mdui-color-indigo{
     background-color: #212121 !important;
 }
