@@ -1,15 +1,20 @@
 # HeaderBar 菜单
 # 图标只在小屏时候显示
 # 查找图标访问：（https://www.mdui.org/docs/material_icon）
+# open_mode 打开方式（不填写则默认为：_self）
+#     _blank 浏览器开新窗口显示链接
+#     _self  当前窗口打开链接
+
 menu:
   Home:
     url: /
     icon: home
     text: 首页
-  Desktop:
-    url: /home
-    icon: desktop_windows
-    text: 桌面
+  Site:
+    url: /site
+    icon: public
+    text: 主站
+    open_mode: _blank
   Tags: 
     url: /tags
     icon: local_offer
@@ -45,10 +50,12 @@ Valine:
 Gitalk:
   enable: true
   githubID: tonychenn
-  repo: tonychenn.github.io
-  ClientID: ecbf6316c9aa7a6bfd7a
-  ClientSecret: 5c875e5986ed75f4509d97acd16628b97f7506f1
+  repo: blog.tonychenn.cn
+  ClientID: 9b72de255840a939dffc
+  ClientSecret: 9ad95d954f8f73a9caf2e79d533cb52d4d172d44
   adminUser: tonychenn
+  proxy: https://proxy.cors.sh/https://github.com/login/oauth/access_token
+  # proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token  (被墙了)
 
 #  是否开启文章目录
 toc: false
@@ -96,7 +103,24 @@ sitemap:
 #baidusitemap:
 #  path: baidusitemap.xml
 
-favicon: /favicon.ico
+# Math Formulas Render Support
+math:
+  # Default (true) will load mathjax / katex script on demand.
+  # That is it only render those page which has `mathjax: true` in Front-matter.
+  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
+  per_page: false
+
+  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
+  mathjax:
+    enable: true
+    # See: https://mhchem.github.io/MathJax-mhchem/
+    mhchem: false
+
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
+  katex:
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false
 
 # 首页顶部图片地址
 index_header_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg

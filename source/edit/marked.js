@@ -826,7 +826,7 @@ InlineLexer.prototype.output = function(src) {
         } while (prevCapZero !== cap[0]);
         text = escape(cap[0]);
         if (cap[1] === 'www.') {
-          href = 'http://' + text;
+          href = 'https://' + text;
         } else {
           href = text;
         }
