@@ -29,18 +29,18 @@
     <%}%>
 
     <div class="mdui-card-actions">
-        <% if(item.description){ %>
+        <% if(item.desc){ %>
             <p id="summary" style="text-align:left;">
-                <%- item.description %>
+                <%- item.desc %>
             </p>
         <%}%>
         <div class="mdui-divider"></div>
         <span class="info">
         <i class="mdui-icon material-icons">&#xe923;</i>
         <%- item.date.format("YYYY-MM-DD") %>
-        <% if(item.updatetime){ %>
+        <% if(item.updated){ %>
             <i class="mdui-icon material-icons">&#xe3c9;</i>
-            <%- date(item.updatetime) %>
+            <%- date(item.updated) %>
         <%}%>
     </span>
         <a class="info mdui-text-color-pink " href="<%- url_for(item.path) %>" style="float:right;">去围观</a>
