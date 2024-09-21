@@ -11,7 +11,7 @@ menu:
     icon: home
     text: 首页
   Site:
-    url: /site
+    url: https://tonychenn.cn
     icon: public
     text: 主站
     open_mode: _blank
