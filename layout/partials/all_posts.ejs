@@ -1,8 +1,5 @@
 <% if (page.posts.length > 0) { %>
 <div id="recent-posts" class="mdui-center">
-
-  <h3 style="text-align: left;">全部文章</h3>
-  
   <% var index = 0; %>
   <% page.posts.limit(10).each(post => { %>
     <% if(post.video){ %>
@@ -11,7 +8,7 @@
       <%-partial('partials/articleitem', {item:post})%>
     <% } %>
 
-    <% if((index+2)%3==0 && theme.SEO.GoogleAd==true){ %>
+    <% if((index+1)%10==0 && theme.SEO.GoogleAd==true){ %>
       <!--文章内容广告-->
       <%- partial('partials/ad_item') %>
     <% } %>
