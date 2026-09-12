@@ -1,48 +1,47 @@
-<% 
+<%
     var item_img = item.img;
-    var title = page.title;
     if(item_img){
         item_img = item.img;
     }else{
         item_img = theme.no_img;
     }
+    var itemTitle = item.title || 'Untitled';
+    var hasMeaningfulUpdate = item.updated && item.date && item.updated.valueOf() > item.date.valueOf();
 %>
 
-<div id="post-item" class="mdui-shadow-2 mdui-center mdui-ripple mdui-hoverable">
-    <div class="mdui-card-media">
-        <img class="post-item-img" data-funlazy="<%- item_img %>" width="100" height="50">
-        <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
-            <div class="mdui-card-primary">
-                <div class="title_font float_left mdui-card-primary-title">
-                    <%- item.title %>
-                </div>
+<mdui-card variant="elevated" class="post-card">
+    <a class="post-card-media post-card-media-link" href="<%= url_for(item.path) %>" aria-label="阅读《<%= itemTitle %>》">
+        <img class="post-item-img" src="<%= url_for(item_img) %>" data-mdm-error-src="<%= url_for(theme.default_error_img) %>" loading="lazy" decoding="async" width="1600" height="900" alt="<%= itemTitle %>">
+        <div class="post-card-cover">
+            <div class="post-card-primary">
+                <h3 class="title_font float_left post-card-title"><%= itemTitle %></h3>
             </div>
         </div>
-    </div>
+    </a>
 
     <% if(item.sticky){ %>
-    <div class="mdui-card-menu">
-        <button class="mdui-btn mdui-btn-icon mdui-text-color-white">
-            <i class="mdui-icon material-icons">&#xe25a;</i>
-        </button>
+    <div class="post-card-menu">
+        <span class="material-symbols-rounded post-card-pin">keep</span>
     </div>
     <%}%>
 
-    <div class="mdui-card-actions">
-        <% if(item.excerpt){ %>
-            <p id="summary" style="text-align:left;">
-                <%- item.excerpt %>
+    <div class="post-card-actions">
+        <% if(item.desc){ %>
+            <p class="post-card-summary" style="text-align:left;">
+                <%- item.desc %>
             </p>
+            <mdui-divider></mdui-divider>
         <%}%>
-        <div class="mdui-divider"></div>
-        <span class="info">
-        <i class="mdui-icon material-icons">&#xe923;</i>
-        <%- item.date.format("YYYY-MM-DD") %>
-        <% if(item.updated){ %>
-            <i class="mdui-icon material-icons">&#xe3c9;</i>
-            <%- date(item.updated) %>
-        <%}%>
-    </span>
-        <a class="info mdui-text-color-pink " href="<%- url_for(item.path) %>" style="float:right;">阅读</a>
+        <div class="post-card-action-row">
+            <span class="info">
+                <span class="material-symbols-rounded info-icon">calendar_today</span>
+                <time datetime="<%= date_xml(item.date) %>"><%= item.date.format("YYYY-MM-DD") %></time>
+                <% if(hasMeaningfulUpdate){ %>
+                    <span class="material-symbols-rounded info-icon">edit_calendar</span>
+                    <time datetime="<%= date_xml(item.updated) %>"><%= date(item.updated) %></time>
+                <%}%>
+            </span>
+            <a class="post-card-link" href="<%= url_for(item.path) %>" aria-label="阅读《<%= itemTitle %>》"><span class="post-card-link-title" aria-hidden="true">阅读</span></a>
+        </div>
     </div>
-</div>          
+</mdui-card>

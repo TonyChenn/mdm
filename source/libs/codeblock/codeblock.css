@@ -27,18 +27,31 @@ figure{
 }
 
 .code_menu_item{
+    display: inline-flex;
+    height: 20px;
+    align-items: center;
     font-size: 20px;
+    line-height: 1;
     position: absolute;
-    top: 10px;
+    top: 5px;
 }
 .code_copy{
     right: 40px;
 }
 .code_expand{
     right: 10px;
+    cursor: pointer;
 }
 .code_language{
     right: 40px;
+    max-width: calc(100% - 100px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.highlight-wrap.code-closed{
+    overflow: hidden;
 }
 
 figure .gutter{
@@ -51,4 +64,9 @@ figure .gutter .line{
 
 .code_menu_item{
     color: #989aa7;
+}
+
+.material-symbols-rounded.code_menu_item{
+    font-size: 20px;
+    line-height: 1;
 }

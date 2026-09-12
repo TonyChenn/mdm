@@ -1,18 +1,27 @@
 <% if (page.posts.length > 0) { %>
-<div id="recent-posts" class="mdui-center">
+<div id="recent-posts">
+
+  <div class="section-heading">
+    <span class="material-symbols-rounded">dynamic_feed</span>
+    <h2>全部文章</h2>
+  </div>
+  
   <% var index = 0; %>
   <% page.posts.limit(10).each(post => { %>
+    <% if(!post.sticky){ %>
     <% if(post.video){ %>
       <%-partial('partials/videoitem', {item:post})%>
     <% }else{ %>
       <%-partial('partials/articleitem', {item:post})%>
     <% } %>
 
-    <% if((index+1)%10==0 && theme.SEO.GoogleAd==true){ %>
+    <% if((index+1)%6==0 && theme.SEO.GoogleAd==true){ %>
       <!--文章内容广告-->
       <%- partial('partials/ad_item') %>
     <% } %>
 
-  <% index++; }); %>
+    <% index++; %>
+    <% } %>
+  <% }); %>
 </div>
 <% } %>

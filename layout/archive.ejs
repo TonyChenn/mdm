@@ -1,4 +1,4 @@
-<!-- 归档列表 -->
+<!-- Archive List -->
 <% 
     var years = {};
     site.posts.sort('date').reverse().forEach(function(post){
@@ -8,29 +8,45 @@
         }
         years[year].push(post);
     });
+    var sortedYears = Object.keys(years).sort(function(a, b) { return Number(b) - Number(a); });
+    var requestedAggregateAdLimit = parseInt(theme.SEO.AggregateAdLimit, 10);
+    var aggregateAdLimit = theme.SEO.GoogleAd === true
+      ? Math.min(3, Math.max(0, Number.isFinite(requestedAggregateAdLimit) ? requestedAggregateAdLimit : 3))
+      : 0;
+    var archiveAdPositions = [];
+    if (aggregateAdLimit > 1 && sortedYears.length > 0) archiveAdPositions.push(Math.ceil(sortedYears.length / 2));
+    if (aggregateAdLimit > 2 && sortedYears.length > 0) archiveAdPositions.push(Math.ceil(sortedYears.length * 5 / 6));
 %>
 
- <!--归档列表 -->
-<div class="mdui-center article">
-  <div class="mdui-panel" mdui-panel="{accordion : true}">
-    <% Object.keys(years).reverse().forEach(function(year){  %>
-          <div class="mdui-panel-item">
-            <div class="mdui-panel-item-header">
-              <div class="mdui-panel-item-title" id="<%= year %>"><%= year %></div>
-              <div class="mdui-panel-item-summary">共<%= years[year].length %>篇</div>
-              <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+<div class="article archive-list">
+  <% if(aggregateAdLimit > 0){ %>
+    <!--鍐呭骞垮憡-->
+    <%- partial('partials/ad_item') %>
+  <% } %>
+
+  <mdui-collapse accordion class="post-collapse">
+    <% sortedYears.forEach(function(year, yearIndex){ %>
+          <mdui-collapse-item value="archive-<%= year %>">
+            <div slot="header" class="post-collapse-header">
+              <div class="post-collapse-title" id="<%= year %>"><%= year %></div>
+              <div class="post-collapse-summary">&#20849;<%= years[year].length %>&#31687;</div>
             </div>
-            <div class="mdui-panel-item-body">
-                <% years[year].map(function(post){  %>
+            <div class="post-collapse-body">
+                <% years[year].forEach(function(post){ %>
                   <span class="post-time">
-                    <%= post.date.format('MM-DD') %>
+                    <time datetime="<%= date_xml(post.date) %>"><%= post.date.format('MM-DD') %></time>
                   </span>
-                  <a class="post-name" href="<%- url_for(post.path) %>"><%- post.title || "Untitled" %></a>
+                  <a class="post-name" href="<%= url_for(post.path) %>"><span class="material-symbols-rounded archive-item-icon">article</span><span><%= post.title || "Untitled" %></span></a>
                 <hr>
                 <% }) %>
             </div>
-          </div>
+          </mdui-collapse-item>
+          <% if(archiveAdPositions.indexOf(yearIndex + 1) !== -1){ %>
+            <div class="aggregate-ad-slot">
+              <!--鍐呭骞垮憡-->
+              <%- partial('partials/ad/horizontal.ad.ejs') %>
+            </div>
+          <% } %>
     <% }) %>
-  </div>
+  </mdui-collapse>
 </div>
-</br></br></br>

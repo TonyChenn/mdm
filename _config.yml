@@ -15,18 +15,23 @@ menu:
     icon: public
     text: 主站
     open_mode: _blank
-  Tags: 
-    url: /tags
+  Tags:
+    url: /tags/
     icon: local_offer
     text: 标签
-  Archives: 
-    url: /archives
+  Archives:
+    url: /archives/
     icon: library_books
     text: 归档
-  About: 
-    url: /about
+  About:
+    url: /about/
     icon: error_outline
     text: 关于
+
+# Material Design 3
+# MDUI 会根据种子色生成亮色与暗色的完整动态配色方案
+material:
+  primary_color: "#6750A4"
 
 CDN:
   enable: false
@@ -68,7 +73,7 @@ reward:
   wechat: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg
 
 # 分享
-# 可选有 qq,qzone,wechat,douban,facebook,twitter,google
+# 可选有 qq,qzone,wechat,douban,facebook,twitter,linkedin
 share:
   enable: true
   facebook: true
@@ -76,7 +81,6 @@ share:
   twitter: true
   weibo: true
   telegram: true
-  googleplus: true
   linkedin: true
 
 
@@ -91,15 +95,14 @@ share:
 SEO:
   BaiduAutoPush: true
   GoogleAd: true
+  AggregateAdLimit: 3
   GreyMode: false
 
 # 点击小心心特效
 ClickEffect:
   enable: true
 
-# 站点地图
-sitemap:
-  path: sitemap.xml
+# 站点地图由站点根目录 _config.yml 和 hexo-generator-sitemap 统一配置
 #baidusitemap:
 #  path: baidusitemap.xml
 
@@ -124,9 +127,16 @@ math:
 
 # 首页顶部图片地址
 index_header_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg
+# 首页固定副标题
+index_subtitle: 游戏客户端开发实践
+# 文章相关推荐
+related_posts:
+  enable: true
+  limit: 4
 # 文章内顶部图片没有设置或者图片出错后显示的默认图片
 default_error_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg
 # 博文条目没有指定图片,默认图片
 no_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg
 # 图片没有加载完成时显示的图片
 load_img: https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/loading.gif
+

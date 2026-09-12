@@ -1,13 +1,17 @@
-<footer class="mdui-color-indigo">
-    <div class="mdui-container">
-        <div style="text-align: center; padding: 20px;">
-            <div >
+<footer class="site-footer">
+    <div class="site-footer-inner">
+        <div class="site-footer-content">
+            <div class="site-footer-copyright">
                 Copyright &copy;
-                <%=config.author%>&nbsp&nbsp<%= new Date().getFullYear() %>
-                &nbspTheme By
+                <%=config.author%>&nbsp;<%= new Date().getFullYear() %>
+                <span class="site-footer-separator">·</span>
+                Theme By
                 <a href="https://github.com/TonyChenn/hexo-theme-mdm">mdm</a>
-                <iframe style="margin-left: 2px; margin-bottom:-5px;" 
-                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true" 
+            </div>
+            <div class="site-footer-github">
+                <iframe
+                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true"
+                        title="GitHub Star"
                         frameborder="0" scrolling="0" width="91px" height="20px">
                 </iframe>
             </div>

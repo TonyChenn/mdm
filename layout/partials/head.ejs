@@ -1,48 +1,29 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="<%= theme.material && theme.material.primary_color ? theme.material.primary_color : '#6750A4' %>">
     <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
     <meta name="baidu-site-verification" content="5EmnBCPDrY" />
-    <%
-    var page_title = page.title || '';
-    if (is_home()) page_title = __('global.home');
-    if (is_archive()) page_title = __('global.archives');
-    if (is_tag()) page_title = __('global.tags') + ': ' + page.tag;
-    if (page.path === 'about/') page_title = __('global.about');
-    page_title += ' - ' + config.title;
-    %>
-
-    <title><%= page_title %></title>
-
-    <meta property="og:url" content="<%= config.url %>">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="<% if (page_title) { %><%= page_title %> | <% } %><%= config.title %>">
-    
-    <% if(page.img) { %>
-        <meta property="og:image" content="<%= page.img %>">
-    <% } else if (config.description){ %>
-        <meta property="og:image" content="<%= theme.no_img %>">
-    <% } %>
-
-    <% if(page.description) { %>
-      <meta property="og:description" content="<%= page.description %>">
-    <% } else if (config.description){ %>
-      <meta property="og:description" content="<%= config.description %>">
-    <% } %>
+    <meta name="msvalidate.01" content="1068F0A80A375C4F15495C209787E358" />
+    <%- partial('partials/seo') %>
 
     <!--mdui-->
-    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
-    <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css" />
+    <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+    <script>
+        mdui.setColorScheme('<%= theme.material && theme.material.primary_color ? theme.material.primary_color : '#6750A4' %>');
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!--jquery-->
     <%- js('https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js') %>
 
-    <!--https://github.com/Dreamer365/FunLazy-->
-    <script src="https://unpkg.com/funlazy@latest"></script>
+    <!--图片使用浏览器原生 loading="lazy"，不再额外加载懒加载库-->
 
     <!--theme-->
     <%- css('css/mdm.css')%>
     <%- css('css/mdm_theme_dark.css')%>
-    <%- js('js/mdm.js') %>
+    <script src="<%- url_for('/js/mdm.js') %>?v=20260820-seo-1"></script>
     
     <!--高亮-->
     <%- css('css/solarized-light.css')%>
@@ -62,7 +43,9 @@
     <%- css('libs/codeblock/codeblock.css')%>
 
     <!--一言-->
-    <script defer src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"></script>
+    <% if(!is_home()){ %>
+        <script defer src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"></script>
+    <% } %>
 
 
     <!--本地搜索-->
@@ -87,6 +70,6 @@
 
     <!---google ad config-->
     <% if(theme.SEO.GoogleAd==true){ %>
-        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8181303774570877" crossorigin="anonymous"></script>
     <% } %>
 </head>

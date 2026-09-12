@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /resume/
 Disallow: /collection/
-Disallow: /*.css
-Disallow: /*.js
+
+Sitemap: https://blog.tonychenn.cn/sitemap.xml

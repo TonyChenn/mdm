@@ -1,43 +1,104 @@
-.mdm_theme_dark{
-    background: #3b3b3b;
+:root,
+.mdui-theme-light {
+    color: #000;
+    background-color: #fff;
 }
 
-.mdm_theme_dark a,
-.mdm_theme_dark h1,
-.mdm_theme_dark h2,
-.mdm_theme_dark h3,
-.mdm_theme_dark h4,
-.mdm_theme_dark h5,
-.mdm_theme_dark h6{
-  color: #ccc;
-}
-
-.mdm_theme_dark code{
-  background-color: #616161
-}
-
-
-.mdm_theme_dark .mdui-color-indigo{
-    background-color: #212121 !important;
-}
-
-/* .mdm_theme_dark #summary,
-.mdm_theme_dark .title_font{
-    color: #9E9E9E;
-} */
-
-  /*post item背景*/
-.mdm_theme_dark .article,
-.mdm_theme_dark .mdui-panel-item,
-.mdm_theme_dark .post_tag,
-.mdm_theme_dark #post-item{
+.mdui-theme-dark {
+    color: #fff;
     background-color: #3b3b3b;
 }
 
-.mdm_theme_dark .mdui-panel-item .mdui-panel-item-title,
-.mdm_theme_dark .info,
-.mdm_theme_dark figure .line,
-.mdm_theme_dark .article li,
-.mdm_theme_dark .article p{
+.mdui-theme-dark body{
+    color: #fff;
+    background-color: #2f2f2f;
+}
+
+.mdui-theme-dark a,
+.mdui-theme-dark h1,
+.mdui-theme-dark h2,
+.mdui-theme-dark h3,
+.mdui-theme-dark h4,
+.mdui-theme-dark h5,
+.mdui-theme-dark h6{
+  color: #ccc;
+}
+
+.mdui-theme-dark code{
+  background-color: #616161;
+}
+
+.mdui-theme-dark .top-app-bar{
+    background: #212121;
+}
+
+/* .mdui-theme-dark #summary,
+.mdui-theme-dark .title_font{
+    color: #9E9E9E;
+} */
+
+/*post item閼冲本娅?*/
+.mdui-theme-dark .article,
+.mdui-theme-dark .article-bg,
+.mdui-theme-dark .post-card,
+.mdui-theme-dark .post-collapse,
+.mdui-theme-dark .post_tag,
+.mdui-theme-dark #post-item,
+.mdui-theme-dark .elevated-card{
+    background-color: #3b3b3b;
+}
+
+.mdui-theme-dark .post-collapse-title,
+.mdui-theme-dark .info,
+.mdui-theme-dark figure .line,
+.mdui-theme-dark .article li,
+.mdui-theme-dark .article p{
   color: rgba(255,255,255,0.54);
+}
+
+/* Material Design 3 dark theme */
+.mdui-theme-dark,
+.mdui-theme-dark body {
+    background: rgb(var(--mdui-color-surface));
+    color: rgb(var(--mdui-color-on-surface));
+}
+
+.mdui-theme-dark a,
+.mdui-theme-dark h1,
+.mdui-theme-dark h2,
+.mdui-theme-dark h3,
+.mdui-theme-dark h4,
+.mdui-theme-dark h5,
+.mdui-theme-dark h6,
+.mdui-theme-dark .title_font,
+.mdui-theme-dark .post-collapse-title,
+.mdui-theme-dark .article li,
+.mdui-theme-dark .article p {
+    color: rgb(var(--mdui-color-on-surface));
+}
+
+.mdui-theme-dark code {
+    background: rgb(var(--mdui-color-surface-container-high));
+    color: rgb(var(--mdui-color-on-surface));
+}
+
+.mdui-theme-dark .top-app-bar {
+    background: rgba(var(--mdui-color-surface-container), 0.94);
+    color: rgb(var(--mdui-color-on-surface));
+}
+
+.mdui-theme-dark .article,
+.mdui-theme-dark .article-bg,
+.mdui-theme-dark .post-card,
+.mdui-theme-dark .post-collapse,
+.mdui-theme-dark .post_tag,
+.mdui-theme-dark #post-item,
+.mdui-theme-dark .elevated-card,
+.mdui-theme-dark .content-card {
+    background: rgb(var(--mdui-color-surface-container-low));
+}
+
+.mdui-theme-dark .info,
+.mdui-theme-dark figure .line {
+    color: rgb(var(--mdui-color-on-surface-variant));
 }

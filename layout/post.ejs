@@ -1,22 +1,109 @@
 <!--博文详细内容-->
-<div class="">
+<%
+  var hasMeaningfulUpdate = page.updated && page.date && page.updated.valueOf() > page.date.valueOf();
+  var postAuthor = page.author && page.author.name ? page.author.name : String(page.author || config.author || '');
+  var relatedEnabled = theme.related_posts && theme.related_posts.enable === true;
+  var configuredRelatedLimit = theme.related_posts ? parseInt(theme.related_posts.limit, 10) : 4;
+  var relatedLimit = Number.isFinite(configuredRelatedLimit) ? Math.min(4, Math.max(0, configuredRelatedLimit)) : 4;
+  var currentTagNames = new Set();
+  var relatedPosts = [];
+
+  if (relatedEnabled && relatedLimit > 0 && page.tags) {
+    page.tags.forEach(function(tag) {
+      currentTagNames.add(tag.name);
+    });
+
+    if (currentTagNames.size > 0) {
+      site.posts.forEach(function(post) {
+        if (post.path === page.path || !post.tags) return;
+
+        var sharedTagCount = 0;
+        post.tags.forEach(function(tag) {
+          if (currentTagNames.has(tag.name)) sharedTagCount++;
+        });
+
+        if (sharedTagCount > 0) {
+          relatedPosts.push({ post: post, sharedTagCount: sharedTagCount });
+        }
+      });
+
+      relatedPosts.sort(function(a, b) {
+        if (b.sharedTagCount !== a.sharedTagCount) return b.sharedTagCount - a.sharedTagCount;
+        return b.post.date.valueOf() - a.post.date.valueOf();
+      });
+      relatedPosts = relatedPosts.slice(0, relatedLimit);
+    }
+  }
+%>
+
+<article class="post-article" aria-labelledby="page-title">
   <%- css('css/post.css')%>
 
-  <div class="article article-bg mdui-center">
+  <mdui-card variant="filled" class="article article-bg content-card">
     <div class="article-info">
+      <div class="post-meta" aria-label="文章信息">
+        <a class="post-meta-author" rel="author" href="<%= url_for('/about/') %>">
+          <span class="material-symbols-rounded" aria-hidden="true">person</span>
+          <span><%= postAuthor %></span>
+        </a>
+        <span class="post-meta-date">
+          <span class="material-symbols-rounded" aria-hidden="true">calendar_today</span>
+          发布于 <time datetime="<%= date_xml(page.date) %>"><%= page.date.format('YYYY-MM-DD') %></time>
+        </span>
+        <% if (hasMeaningfulUpdate) { %>
+          <span class="post-meta-date">
+            <span class="material-symbols-rounded" aria-hidden="true">edit_calendar</span>
+            更新于 <time datetime="<%= date_xml(page.updated) %>"><%= page.updated.format('YYYY-MM-DD') %></time>
+          </span>
+        <% } %>
+      </div>
+
       <!--文章内容广告-->
       <% if(theme.SEO.GoogleAd==true){ %>
         <%- partial('partials/ad/article.ejs') %>
       <% } %>
-      
-      <div>
-      <%- page.content%>
-    </div>
+
+      <div class="post-body">
+        <%- page.content%>
+      </div>
+
       <%- partial('partials/reward') %>
     </div>
-  </div>
+  </mdui-card>
 
-  <%- partial('partials/talk') %>
+  <% if (page.prev || page.next) { %>
+    <nav class="post-navigation" aria-label="文章导航">
+      <% if (page.prev) { %>
+        <a class="post-navigation-link post-navigation-prev" href="<%= url_for(page.prev.path) %>">
+          <span class="post-navigation-label"><span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>上一篇</span>
+          <span class="post-navigation-title"><%= page.prev.title || 'Untitled' %></span>
+        </a>
+      <% } %>
+      <% if (page.next) { %>
+        <a class="post-navigation-link post-navigation-next" href="<%= url_for(page.next.path) %>">
+          <span class="post-navigation-label">下一篇<span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></span>
+          <span class="post-navigation-title"><%= page.next.title || 'Untitled' %></span>
+        </a>
+      <% } %>
+    </nav>
+  <% } %>
+
+  <% if (relatedPosts.length > 0) { %>
+    <section class="related-posts" aria-labelledby="related-posts-title">
+      <h2 id="related-posts-title">相关推荐</h2>
+      <div class="related-posts-grid">
+        <% relatedPosts.forEach(function(related) { %>
+          <a class="related-post-link" href="<%= url_for(related.post.path) %>">
+            <span class="related-post-title"><%= related.post.title || 'Untitled' %></span>
+            <time datetime="<%= date_xml(related.post.date) %>"><%= related.post.date.format('YYYY-MM-DD') %></time>
+          </a>
+        <% }); %>
+      </div>
+    </section>
+  <% } %>
+</article>
+
+<%- partial('partials/talk') %>
   <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
     <div class="widget">
       <h3 class="title">目录</h3>
@@ -26,4 +113,3 @@
       }) %> 
     </div>
   </aside> -->
-</div>

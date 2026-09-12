@@ -1,0 +1,154 @@
+<%
+  var isTagsAggregate = page.type === 'tags' || page.layout === 'tags';
+  var isArchivesAggregate = page.type === 'archives' || page.layout === 'archive';
+  var isAboutPage = page.type === 'about' || is_current('/about');
+  var isFriendsPage = page.type === 'friends' || is_current('/friends');
+  var homeSubtitle = theme.index_subtitle || config.subtitle || '';
+  var currentPage = Number(page.current) || 1;
+  var seoTitle = '';
+
+  if (is_home()) {
+    seoTitle = config.title + (homeSubtitle ? '｜' + homeSubtitle : '');
+    if (currentPage > 1) seoTitle += '｜第' + currentPage + '页';
+  } else if (is_post()) {
+    seoTitle = (page.title || '文章') + '｜' + config.title;
+  } else if (isTagsAggregate) {
+    seoTitle = '标签｜' + config.title;
+  } else if (isArchivesAggregate) {
+    seoTitle = '归档｜' + config.title;
+  } else if (isAboutPage) {
+    seoTitle = '关于｜' + config.title;
+  } else if (isFriendsPage) {
+    seoTitle = '友链｜' + config.title;
+  } else {
+    seoTitle = (page.title ? page.title + '｜' : '') + config.title;
+  }
+
+  function decodeSeoEntities(value) {
+    var namedEntities = {
+      amp: '&',
+      lt: '<',
+      gt: '>',
+      quot: '"',
+      apos: "'",
+      nbsp: ' '
+    };
+    return value
+      .replace(/&#x([0-9a-f]+);/gi, function(match, code) {
+        var codePoint = parseInt(code, 16);
+        return Number.isFinite(codePoint) && codePoint >= 0 && codePoint <= 0x10FFFF && !(codePoint >= 0xD800 && codePoint <= 0xDFFF)
+          ? String.fromCodePoint(codePoint)
+          : match;
+      })
+      .replace(/&#(\d+);/g, function(match, code) {
+        var codePoint = parseInt(code, 10);
+        return Number.isFinite(codePoint) && codePoint >= 0 && codePoint <= 0x10FFFF && !(codePoint >= 0xD800 && codePoint <= 0xDFFF)
+          ? String.fromCodePoint(codePoint)
+          : match;
+      })
+      .replace(/&(amp|lt|gt|quot|apos|nbsp);/gi, function(match, name) {
+        return namedEntities[name.toLowerCase()];
+      });
+  }
+
+  function normalizeSeoText(value) {
+    return decodeSeoEntities(strip_html(String(value || ''))).replace(/\s+/g, ' ').trim();
+  }
+
+  var descriptionCandidates = is_home()
+    ? [config.description]
+    : [page.description, page.excerpt, page.content, config.description];
+  var seoDescription = '';
+  for (var descriptionIndex = 0; descriptionIndex < descriptionCandidates.length; descriptionIndex++) {
+    seoDescription = normalizeSeoText(descriptionCandidates[descriptionIndex]);
+    if (seoDescription) break;
+  }
+  if (!seoDescription) seoDescription = config.title;
+  seoDescription = Array.from(seoDescription).slice(0, 160).join('');
+
+  var canonicalPath = page.canonical_path || path || page.path || '/';
+  var canonicalUrl = full_url_for(canonicalPath);
+  canonicalUrl = canonicalUrl.replace(/\/index\.html$/, '/');
+
+  function toAbsoluteHttpUrl(value) {
+    var rawUrl = String(value || '').trim();
+    if (!rawUrl) return '';
+    try {
+      var candidate = /^https?:\/\//i.test(rawUrl) || /^\/\//.test(rawUrl)
+        ? new URL(rawUrl, canonicalUrl)
+        : new URL(full_url_for(rawUrl));
+      return candidate.protocol === 'http:' || candidate.protocol === 'https:' ? candidate.href : '';
+    } catch (error) {
+      return '';
+    }
+  }
+
+  var firstPhoto = page.photos && page.photos.length ? page.photos[0] : '';
+  var seoImage = toAbsoluteHttpUrl(page.img) || toAbsoluteHttpUrl(firstPhoto) || toAbsoluteHttpUrl(theme.no_img);
+  var isHomePagination = is_home() && currentPage > 1;
+  var shouldNoindex = page.noindex === true || page.noindex === 'true' || isHomePagination;
+  var robotsContent = shouldNoindex ? 'noindex,follow' : 'index,follow';
+%>
+
+<title><%= seoTitle %></title>
+<meta name="description" content="<%= seoDescription %>">
+<meta name="author" content="<%= config.author %>">
+<meta name="robots" content="<%= robotsContent %>">
+<link rel="canonical" href="<%= canonicalUrl %>">
+
+<meta property="og:site_name" content="<%= config.title %>">
+<meta property="og:url" content="<%= canonicalUrl %>">
+<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= seoTitle %>">
+<meta property="og:description" content="<%= seoDescription %>">
+<% if (seoImage) { %>
+<meta property="og:image" content="<%= seoImage %>">
+<% } %>
+
+<meta name="twitter:card" content="<%= seoImage ? 'summary_large_image' : 'summary' %>">
+<meta name="twitter:title" content="<%= seoTitle %>">
+<meta name="twitter:description" content="<%= seoDescription %>">
+<% if (seoImage) { %>
+<meta name="twitter:image" content="<%= seoImage %>">
+<% } %>
+
+<% if (is_post()) {
+  var hasValidPublishedDate = page.date && typeof page.date.valueOf === 'function' && Number.isFinite(Number(page.date.valueOf()));
+  var publishedDate = hasValidPublishedDate ? date_xml(page.date) : undefined;
+  var hasMeaningfulUpdate = page.updated && typeof page.updated.valueOf === 'function' && hasValidPublishedDate && Number.isFinite(Number(page.updated.valueOf())) && page.updated.valueOf() > page.date.valueOf();
+  var modifiedDate = hasMeaningfulUpdate ? date_xml(page.updated) : publishedDate;
+  var articleAuthor = normalizeSeoText(page.author && page.author.name ? page.author.name : (page.author || config.author));
+  var articleData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: normalizeSeoText(page.title),
+    description: seoDescription,
+    url: canonicalUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl
+    },
+    author: {
+      '@type': 'Person',
+      name: articleAuthor,
+      url: full_url_for('/about/')
+    },
+    publisher: {
+      '@type': 'Person',
+      name: config.author
+    },
+    datePublished: publishedDate,
+    dateModified: modifiedDate
+  };
+  if (seoImage) articleData.image = seoImage;
+  var articleDataJson = JSON.stringify(articleData)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+%>
+<% if (publishedDate) { %><meta property="article:published_time" content="<%= publishedDate %>"><% } %>
+<% if (modifiedDate) { %><meta property="article:modified_time" content="<%= modifiedDate %>"><% } %>
+<script type="application/ld+json"><%- articleDataJson %></script>
+<% } %>

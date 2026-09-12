@@ -1,3 +1,39 @@
+<%
+  var pinnedPosts = [];
+  page.posts.each(function(post){
+    if(post.sticky){
+      pinnedPosts.push(post);
+    }
+  });
+  pinnedPosts.sort(function(a, b){
+    return (Number(b.sticky) || 0) - (Number(a.sticky) || 0);
+  });
+%>
+
+<% if(pinnedPosts.length){ %>
+<section class="pinned-posts" aria-labelledby="pinned-posts-title">
+  <div class="section-heading pinned-posts-heading">
+    <span class="material-symbols-rounded">keep</span>
+    <h2 id="pinned-posts-title">置顶文章</h2>
+  </div>
+  <div class="pinned-posts-track" role="list">
+    <% pinnedPosts.forEach(function(post){ %>
+      <% var pinnedImage = post.img || theme.no_img; %>
+      <mdui-card class="pinned-post-card" variant="elevated" role="listitem">
+        <a class="pinned-post-link" href="<%= url_for(post.path) %>" aria-label="阅读《<%= post.title || 'Untitled' %>》">
+          <img class="pinned-post-image" src="<%= url_for(pinnedImage) %>" data-mdm-error-src="<%= url_for(theme.default_error_img) %>" loading="lazy" decoding="async" width="1600" height="900" alt="<%= post.title || 'Untitled' %>">
+          <div class="pinned-post-scrim"></div>
+          <div class="pinned-post-content">
+            <span class="pinned-post-label"><span class="material-symbols-rounded">keep</span>置顶</span>
+            <h3><%= post.title || 'Untitled' %></h3>
+            <time class="pinned-post-date" datetime="<%= date_xml(post.date) %>"><span class="material-symbols-rounded">calendar_today</span><%= post.date.format('YYYY-MM-DD') %></time>
+          </div>
+        </a>
+      </mdui-card>
+    <% }); %>
+  </div>
+</section>
+<% } %>
 
 <%-partial('partials/all_posts')%>
 
@@ -8,4 +44,3 @@
     next_text: '>',
   })%>
 </div>
-</br>

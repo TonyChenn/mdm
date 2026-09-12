@@ -1,26 +1,19 @@
 <% if(theme.reward.enable){ %>
-    <div class="mdui-container">
-        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
-            mdui-dialog="{target: '#reward-dialog'}">赏</button>
-        <div class="mdui-dialog" id="reward-dialog">
-            <div class="reward-title"><%= theme.reward.title %> </div>
-            <div class="mdui-divider"></div>
-            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
-                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
-                <a href="#reward-wechat" class="mdui-ripple">微信</a>
-            </div>
-            <div id="reward-alipay">
-                <img src="<%=theme.reward.alipay%>" class="mdui-center noclick">
-            </div>
-            <div id="reward-wechat">
-                <img src="<%=theme.reward.wechat%>" class="mdui-center noclick">
-            </div>
-        </div>
+    <div class="reward-container">
+        <mdui-button class="reward-trigger" variant="tonal" icon="volunteer_activism" onclick="document.getElementById('reward-dialog').open = true;">&#36175;</mdui-button>
+        <mdui-dialog id="reward-dialog" class="reward-dialog" close-on-overlay-click close-on-esc headline="<%= theme.reward.title %>">
+            <mdui-tabs value="reward-alipay" full-width>
+                <mdui-tab value="reward-alipay">&#25903;&#20184;&#23453;</mdui-tab>
+                <mdui-tab value="reward-wechat">&#24494;&#20449;</mdui-tab>
+
+                <mdui-tab-panel slot="panel" value="reward-alipay">
+                    <img src="<%=theme.reward.alipay%>" class="reward-image noclick">
+                </mdui-tab-panel>
+                <mdui-tab-panel slot="panel" value="reward-wechat">
+                    <img src="<%=theme.reward.wechat%>" class="reward-image noclick">
+                </mdui-tab-panel>
+            </mdui-tabs>
+            <mdui-button slot="action" variant="text" onclick="document.getElementById('reward-dialog').open = false;">&#20851;&#38381;</mdui-button>
+        </mdui-dialog>
     </div>
-    <script type="text/javascript">
-        var tab = new mdui.Tab('#reward-tab');
-        mdui.$('#reward-dialog').on('open.mdui.dialog', function () {
-        tab.handleUpdate();
-        });
-    </script>
 <% } %>
